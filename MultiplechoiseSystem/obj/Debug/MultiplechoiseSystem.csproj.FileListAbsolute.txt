@@ -1,0 +1,15 @@
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\bin\Debug\MultiplechoiseSystem.exe.config
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\bin\Debug\MultiplechoiseSystem.exe
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\bin\Debug\MultiplechoiseSystem.pdb
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.Properties.Resources.resources
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.csproj.GenerateResource.cache
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.exe
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.pdb
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FLogin.resources
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.FMains.resources
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.FEditProfile.resources
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.ListCourse.resources
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.csprojAssemblyReference.cache
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.UCEnroll.resources
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.FAlert.resources
