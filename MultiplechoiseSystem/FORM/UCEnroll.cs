@@ -7,16 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MultiplechoiseSystem.FORM;
+using MultiplechoiseSystem.DAO;
 namespace MultiplechoiseSystem.FORM
 {
     public partial class UCEnroll : UserControl
     {
+         
         public UCEnroll()
         {
             InitializeComponent();
+            AutoCompleteSearch();
         }
+        void Alert(string msg="Success !", FAlert.emType type = FAlert.emType.success)
+        {
+            FAlert frm = new FAlert();
+            frm.showAlert(msg, type);
 
+        }
         private Panel EnrollCourse(string NameCourse, string Lecturer, string DateTest)
         {
             Panel course = new Panel();
@@ -52,7 +60,7 @@ namespace MultiplechoiseSystem.FORM
             review.BackColor = Color.MediumAquamarine;
             review.Location = new Point(1173, 8);
             review.Size = new Size(175, 48);
-
+            review.Click += enroll_Click;
 
             course.Controls.Add(name);
             course.Controls.Add(nametech);
@@ -61,6 +69,11 @@ namespace MultiplechoiseSystem.FORM
             course.Controls.Add(review);
             return course;
         }
+     
+        private void enroll_Click(object sender, EventArgs e)
+        {
+            Alert();
+        }
 
         private void UCEnroll_Load(object sender, EventArgs e)
         {
@@ -68,6 +81,28 @@ namespace MultiplechoiseSystem.FORM
             {
                 flpListCourse.Controls.Add(EnrollCourse("Priciple progaming language", "Mr Duy", "12-10-2020 12-10-AM"));
             }
+        }
+
+        private void AutoCompleteSearch()
+        {
+            string query = @"Select courseID from COURSE";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            AutoCompleteStringCollection source = new AutoCompleteStringCollection();
+            //use LINQ method syntax to pull the Title field from a DT into a string array...
+            string[] postSource = data
+                                .AsEnumerable()
+                                .Select<System.Data.DataRow, String>(x => x.Field<String>("courseID"))
+                                .ToArray();
+            source.AddRange(postSource);
+
+            tbCourseID.AutoCompleteCustomSource = source;
+            tbCourseID.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            tbCourseID.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

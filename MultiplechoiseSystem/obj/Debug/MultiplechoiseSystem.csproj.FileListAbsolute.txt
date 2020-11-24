@@ -10,6 +10,8 @@ C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\Multiplec
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.FMains.resources
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.FEditProfile.resources
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.ListCourse.resources
-C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.csprojAssemblyReference.cache
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.UCEnroll.resources
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.FAlert.resources
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.UCCourseDetail.resources
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.csprojAssemblyReference.cache
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.UCEditInfo.resources

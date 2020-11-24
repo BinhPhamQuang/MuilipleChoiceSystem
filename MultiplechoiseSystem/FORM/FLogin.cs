@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MultiplechoiseSystem.FORM;
-
+using MultiplechoiseSystem.DAO;
+using MultiplechoiseSystem.DTO;
 namespace MultiplechoiseSystem
 {
     public partial class FLogin : Form
@@ -20,7 +21,7 @@ namespace MultiplechoiseSystem
 
         private void FLogin_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -79,8 +80,26 @@ namespace MultiplechoiseSystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            FMains f = new FMains();
-            f.ShowDialog();
+            if (txtUsername.Text.Length != 0 && txtPassword.Text.Length != 0)
+            {
+                if (UserDAO.Instance.getUser(txtUsername.Text, txtPassword.Text)==false)
+                {
+                    lb_error.Visible = true;
+                }
+                else
+                {
+                    FMains f = new FMains();
+                    lb_error.Visible = false;
+                    f.ShowDialog();
+                    
+                }
+                FMains a = new FMains();
+                lb_error.Visible = false;
+                a.ShowDialog();
+            }
+            
+            
+            
         }
     }
 }

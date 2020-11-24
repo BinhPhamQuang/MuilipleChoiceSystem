@@ -65,6 +65,7 @@
             // 
             // tbCourseID
             // 
+            this.tbCourseID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.tbCourseID.BackColor = System.Drawing.SystemColors.MenuBar;
             this.tbCourseID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbCourseID.Location = new System.Drawing.Point(144, 20);
@@ -131,6 +132,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Enroll";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 
@@ -144,7 +146,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(449, 90);
+            this.label5.Location = new System.Drawing.Point(468, 90);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(117, 30);
             this.label5.TabIndex = 9;
@@ -183,7 +185,7 @@
             this.Controls.Add(this.tbCourseID);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCEnroll";
             this.Size = new System.Drawing.Size(1394, 776);
             this.Load += new System.EventHandler(this.UCEnroll_Load);

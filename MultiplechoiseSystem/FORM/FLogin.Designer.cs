@@ -202,9 +202,11 @@
             this.lb_error.Size = new System.Drawing.Size(338, 23);
             this.lb_error.TabIndex = 30;
             this.lb_error.Text = "Incorrect username or password !";
+            this.lb_error.Visible = false;
             // 
             // FLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));

@@ -20,7 +20,7 @@ namespace MultiplechoiseSystem.DAO
 
         private DataProvider() { }
 
-        private string connectionSTR = "Data Source=.\\sqlexpress;Initial Catalog=QuanLyQuanCafe;Integrated Security=True";
+        private string connectionSTR = "Data Source=.\\sqlexpress;Initial Catalog=MULTIPLECHOICE;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
@@ -47,7 +47,7 @@ namespace MultiplechoiseSystem.DAO
                 }
 
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
-
+               
                 adapter.Fill(data);
 
                 connection.Close();
