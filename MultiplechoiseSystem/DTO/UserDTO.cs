@@ -27,5 +27,9 @@ namespace MultiplechoiseSystem.DTO
         public string DepartmentCode;
         public string UserType;
         public string DepartmentName;
+        public string Username;
+        public string password;
+
+        public ExamDTO examSelected;
     }
 }

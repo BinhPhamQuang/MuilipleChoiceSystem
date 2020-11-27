@@ -104,6 +104,7 @@ namespace MultiplechoiseSystem.FORM
             detail.Size = new Size(137, 41);
             detail.FlatStyle = FlatStyle.Flat;
             detail.BackColor = SystemColors.Menu;
+            detail.Click += Btndetail_Click;
             
 
             COUNT_NO += 1;
@@ -114,6 +115,13 @@ namespace MultiplechoiseSystem.FORM
             p.Controls.Add(detail);
             return p;
         }
+
+        private void Btndetail_Click(object sender, EventArgs e)
+        {
+            FTest f = new FTest();
+            f.ShowDialog();
+        }
+
         private void DisplayManagerFunction()
         {   
             /*
@@ -129,9 +137,19 @@ namespace MultiplechoiseSystem.FORM
             }
             */
         }
+
+        private void Displaylabel()
+        {
+            lb_namecourse.Text = UserDTO.Instance.examSelected.courseName;
+            lbTimeTest.Text = UserDTO.Instance.examSelected.AcademyYear.ToString()+" minutes";
+            label3.Text = UserDTO.Instance.examSelected.testDate.ToString();
+            lbnguoirade.Text = UserDTO.Instance.examSelected.teacherCreate;
+        }
         private void UCCourseDetail_Load(object sender, EventArgs e)
         {
             DisplayManagerFunction();
+            Displaylabel();
+            
             for (int i = 0; i < 20; i++)
             {
                 flp_result.Controls.Add(createFrameResult("1", "Pham Quang Binh", 9.75, "12-5-2020 12:05AM"));

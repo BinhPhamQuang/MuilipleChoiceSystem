@@ -93,9 +93,9 @@ namespace MultiplechoiseSystem
                     f.ShowDialog();
                     
                 }
-                FMains a = new FMains();
-                lb_error.Visible = false;
-                a.ShowDialog();
+
+                FTest a = new FTest();
+               a.Show();
             }
             
             

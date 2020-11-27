@@ -47,17 +47,43 @@ namespace MultiplechoiseSystem.FORM
         private void DisplayInfo()
         {
             lbname.Text = UserDTO.Instance.FirstName + " " + UserDTO.Instance.LastName;
-            lbType.Text = UserDTO.Instance.UserType;
+            if (UserDTO.Instance.UserType == UserDTO.Instance.Student)
+            {
+                lbType.Text = "Student";
+                button1.Visible = true;
+                button1.TextAlign = ContentAlignment.MiddleCenter;
+                button1.Text = "Enroll";
+                btnCreateQuestion.Visible = false;
+            }
+            if (UserDTO.Instance.UserType == UserDTO.Instance.Lecturer)
+            {
+                lbType.Text = "Lecturer";
+                button1.Visible = false;
+               
+                btnCreateQuestion.Visible = true;
+            }
+            if (UserDTO.Instance.UserType == UserDTO.Instance.Manager)
+            {
+                lbType.Text = "Manager";
+                button1.TextAlign = ContentAlignment.MiddleRight;
+                button1.Text = "Course Outcome";
+                button1.Visible = true;
+                btnCreateQuestion.Visible = false;
+            }
             lbDepartment.Text = UserDTO.Instance.DepartmentName;
 
         }
         private void FMains_Load(object sender, EventArgs e)
         {
             DisplayInfo();
+             
         }
 
+         
         protected void BtnCourseViewDetailClick(object sender, EventArgs e)
         {
+
+             
             CourseDetail = new UCCourseDetail();
             panel_main.Controls.Add(CourseDetail);
             CourseDetail.BringToFront();
@@ -103,6 +129,7 @@ namespace MultiplechoiseSystem.FORM
         {
             btnCourse.BackColor = Color.FromArgb(0, 0, 64);
             button1.BackColor = Color.FromArgb(16, 54, 100);
+            btnCreateQuestion.BackColor = Color.FromArgb(16, 54, 100);
             listCourse.BringToFront();
         }
 
@@ -115,23 +142,20 @@ namespace MultiplechoiseSystem.FORM
         {
             btnCourse.BackColor = Color.FromArgb(16, 54, 100);
             button1.BackColor = Color.FromArgb(0, 0, 64);
-            ucenroll.BringToFront();
+            btnCreateQuestion.BackColor = Color.FromArgb(16, 54, 100);
+            if (UserDTO.Instance.UserType == UserDTO.Instance.Student)
+            {
+                ucenroll.BringToFront();
+            }
+            else
+            {
+                if (UserDTO.Instance.UserType == UserDTO.Instance.Manager)
+                {
+
+                }
+            }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                        
 
         private void buttonMinimize_Click(object sender, EventArgs e)
         {
@@ -156,6 +180,16 @@ namespace MultiplechoiseSystem.FORM
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbTime.Text = DateTime.Now.ToString("t");
+        }
+
+        private void btnCreateQuestion_Click(object sender, EventArgs e)
+        {
+            btnCreateQuestion.BackColor = Color.FromArgb(0, 0, 64);
+            button1.BackColor = Color.FromArgb(16, 54, 100);
+            btnCourse.BackColor = Color.FromArgb(16, 54, 100);
+            UCinsertQuestion uCinsertQuestion = new UCinsertQuestion();
+            panel_main.Controls.Add(uCinsertQuestion);
+            uCinsertQuestion.BringToFront();
         }
     }
 }

@@ -36,7 +36,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtlastName = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -56,32 +56,32 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.tbAddress = new System.Windows.Forms.TextBox();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.btnAddEmail = new System.Windows.Forms.Button();
-            this.btnAddphone = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.btnAddEmail = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
             this.panel18 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnAddphone = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbPhoneNumber = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.btnConfirm = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.panel22 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.panel23 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panel25 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbPassword = new System.Windows.Forms.TextBox();
             this.panel26 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.panel27 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbUsernam = new System.Windows.Forms.TextBox();
             this.panel28 = new System.Windows.Forms.Panel();
             this.panel29 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
@@ -167,7 +167,7 @@
             // 
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.txtlastName);
             this.panel3.Location = new System.Drawing.Point(737, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(532, 55);
@@ -190,16 +190,16 @@
             this.panel5.Size = new System.Drawing.Size(270, 2);
             this.panel5.TabIndex = 6;
             // 
-            // textBox1
+            // txtlastName
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(232, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(267, 29);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Text = "Binh";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtlastName.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtlastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtlastName.Location = new System.Drawing.Point(232, 11);
+            this.txtlastName.Name = "txtlastName";
+            this.txtlastName.Size = new System.Drawing.Size(267, 29);
+            this.txtlastName.TabIndex = 9;
+            this.txtlastName.Text = "Binh";
+            this.txtlastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel4
             // 
@@ -379,6 +379,18 @@
             this.panel13.Size = new System.Drawing.Size(1385, 67);
             this.panel13.TabIndex = 19;
             // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.btnAddEmail);
+            this.panel16.Controls.Add(this.label5);
+            this.panel16.Controls.Add(this.panel17);
+            this.panel16.Controls.Add(this.tbEmail);
+            this.panel16.Location = new System.Drawing.Point(737, 8);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(574, 59);
+            this.panel16.TabIndex = 12;
+            this.panel16.Paint += new System.Windows.Forms.PaintEventHandler(this.panel16_Paint);
+            // 
             // btnAddEmail
             // 
             this.btnAddEmail.FlatAppearance.BorderSize = 0;
@@ -389,29 +401,6 @@
             this.btnAddEmail.Size = new System.Drawing.Size(38, 44);
             this.btnAddEmail.TabIndex = 14;
             this.btnAddEmail.UseVisualStyleBackColor = true;
-            // 
-            // btnAddphone
-            // 
-            this.btnAddphone.FlatAppearance.BorderSize = 0;
-            this.btnAddphone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddphone.Image = ((System.Drawing.Image)(resources.GetObject("btnAddphone.Image")));
-            this.btnAddphone.Location = new System.Drawing.Point(494, 3);
-            this.btnAddphone.Name = "btnAddphone";
-            this.btnAddphone.Size = new System.Drawing.Size(38, 44);
-            this.btnAddphone.TabIndex = 13;
-            this.btnAddphone.UseVisualStyleBackColor = true;
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.btnAddEmail);
-            this.panel16.Controls.Add(this.label5);
-            this.panel16.Controls.Add(this.panel17);
-            this.panel16.Controls.Add(this.textBox2);
-            this.panel16.Location = new System.Drawing.Point(737, 8);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(574, 59);
-            this.panel16.TabIndex = 12;
-            this.panel16.Paint += new System.Windows.Forms.PaintEventHandler(this.panel16_Paint);
             // 
             // label5
             // 
@@ -430,23 +419,23 @@
             this.panel17.Size = new System.Drawing.Size(359, 2);
             this.panel17.TabIndex = 6;
             // 
-            // textBox2
+            // tbEmail
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(139, 10);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(359, 29);
-            this.textBox2.TabIndex = 10;
-            this.textBox2.Text = "bnh.quang@gmail.com";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbEmail.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tbEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbEmail.Location = new System.Drawing.Point(139, 10);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(359, 29);
+            this.tbEmail.TabIndex = 10;
+            this.tbEmail.Text = "bnh.quang@gmail.com";
+            this.tbEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel18
             // 
             this.panel18.Controls.Add(this.label8);
             this.panel18.Controls.Add(this.btnAddphone);
             this.panel18.Controls.Add(this.panel19);
-            this.panel18.Controls.Add(this.label9);
+            this.panel18.Controls.Add(this.lbPhoneNumber);
             this.panel18.Location = new System.Drawing.Point(35, 8);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(568, 59);
@@ -461,6 +450,17 @@
             this.label8.Size = new System.Drawing.Size(196, 30);
             this.label8.TabIndex = 4;
             this.label8.Text = "Phone number:";
+            // 
+            // btnAddphone
+            // 
+            this.btnAddphone.FlatAppearance.BorderSize = 0;
+            this.btnAddphone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddphone.Image = ((System.Drawing.Image)(resources.GetObject("btnAddphone.Image")));
+            this.btnAddphone.Location = new System.Drawing.Point(494, 3);
+            this.btnAddphone.Name = "btnAddphone";
+            this.btnAddphone.Size = new System.Drawing.Size(38, 44);
+            this.btnAddphone.TabIndex = 13;
+            this.btnAddphone.UseVisualStyleBackColor = true;
             // 
             // panel19
             // 
@@ -489,14 +489,14 @@
             this.label10.Text = "+845213456789";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
+            // lbPhoneNumber
             // 
-            this.label9.Location = new System.Drawing.Point(227, 10);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(272, 30);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "+845213456789";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbPhoneNumber.Location = new System.Drawing.Point(227, 10);
+            this.lbPhoneNumber.Name = "lbPhoneNumber";
+            this.lbPhoneNumber.Size = new System.Drawing.Size(272, 30);
+            this.lbPhoneNumber.TabIndex = 7;
+            this.lbPhoneNumber.Text = "0947454058";
+            this.lbPhoneNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel21
             // 
@@ -506,22 +506,6 @@
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(1385, 43);
             this.panel21.TabIndex = 20;
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.BackColor = System.Drawing.Color.Aquamarine;
-            this.btnConfirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirm.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirm.Image")));
-            this.btnConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirm.Location = new System.Drawing.Point(502, 3);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(152, 39);
-            this.btnConfirm.TabIndex = 0;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnConfirm.UseVisualStyleBackColor = false;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnExit
             // 
@@ -538,6 +522,22 @@
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnConfirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirm.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirm.Image")));
+            this.btnConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfirm.Location = new System.Drawing.Point(502, 3);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(152, 39);
+            this.btnConfirm.TabIndex = 0;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // panel22
             // 
@@ -571,7 +571,7 @@
             // 
             this.panel24.Controls.Add(this.label12);
             this.panel24.Controls.Add(this.panel25);
-            this.panel24.Controls.Add(this.textBox3);
+            this.panel24.Controls.Add(this.tbPassword);
             this.panel24.Location = new System.Drawing.Point(737, 3);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(532, 55);
@@ -594,22 +594,22 @@
             this.panel25.Size = new System.Drawing.Size(270, 2);
             this.panel25.TabIndex = 6;
             // 
-            // textBox3
+            // tbPassword
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(232, 11);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(267, 29);
-            this.textBox3.TabIndex = 9;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox3.UseSystemPasswordChar = true;
+            this.tbPassword.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbPassword.Location = new System.Drawing.Point(232, 11);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(267, 29);
+            this.tbPassword.TabIndex = 9;
+            this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbPassword.UseSystemPasswordChar = true;
             // 
             // panel26
             // 
             this.panel26.Controls.Add(this.label13);
             this.panel26.Controls.Add(this.panel27);
-            this.panel26.Controls.Add(this.textBox4);
+            this.panel26.Controls.Add(this.tbUsernam);
             this.panel26.Location = new System.Drawing.Point(35, 0);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(532, 55);
@@ -632,17 +632,17 @@
             this.panel27.Size = new System.Drawing.Size(270, 2);
             this.panel27.TabIndex = 6;
             // 
-            // textBox4
+            // tbUsernam
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(232, 11);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(267, 29);
-            this.textBox4.TabIndex = 9;
-            this.textBox4.Text = "Pham Quang";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbUsernam.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tbUsernam.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbUsernam.Enabled = false;
+            this.tbUsernam.Location = new System.Drawing.Point(232, 11);
+            this.tbUsernam.Name = "tbUsernam";
+            this.tbUsernam.Size = new System.Drawing.Size(267, 29);
+            this.tbUsernam.TabIndex = 9;
+            this.tbUsernam.Text = "Pham Quang";
+            this.tbUsernam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel28
             // 
@@ -761,6 +761,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCEditInfo";
             this.Size = new System.Drawing.Size(1394, 776);
+            this.Load += new System.EventHandler(this.UCEditInfo_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -809,7 +810,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtlastName;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel6;
@@ -833,7 +834,7 @@
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Button btnAddphone;
         private System.Windows.Forms.Button btnAddEmail;
         private System.Windows.Forms.Panel panel18;
@@ -841,7 +842,7 @@
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbPhoneNumber;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnConfirm;
@@ -851,11 +852,11 @@
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel25;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel27;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbUsernam;
         private System.Windows.Forms.Panel panel28;
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.Label label14;

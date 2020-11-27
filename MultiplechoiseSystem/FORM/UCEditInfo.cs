@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MultiplechoiseSystem.DTO;
 namespace MultiplechoiseSystem.FORM
 {
     public partial class UCEditInfo : UserControl
@@ -47,6 +47,32 @@ namespace MultiplechoiseSystem.FORM
             if (this.BtnConfirmClick != null)
             {
                 this.BtnConfirmClick(this, e);
+            }
+        }
+
+        private void UCEditInfo_Load(object sender, EventArgs e)
+        {
+            txtFistName.Text = UserDTO.Instance.FirstName;
+            txtlastName.Text = UserDTO.Instance.LastName;
+            if (UserDTO.Instance.sex == "M")
+            {
+                lbSex.Text = "Male";
+
+            }
+            else
+                lbSex.Text = "FeMale";
+            
+            tbUsernam.Text = UserDTO.Instance.Username;
+            tbPassword.Text = UserDTO.Instance.password;
+            try
+            {
+
+                tbAddress.Text = UserDTO.Instance.Address;
+                dateOfBirth.Value = UserDTO.Instance.DateOfBirth;
+            }
+            catch(Exception a)
+            {
+
             }
         }
     }

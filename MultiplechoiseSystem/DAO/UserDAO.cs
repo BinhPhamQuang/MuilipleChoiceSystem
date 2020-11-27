@@ -22,21 +22,68 @@ namespace MultiplechoiseSystem.DAO
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             if (result.Rows.Count != 0)
             {
-                
                 DataRow r = result.Rows[0];
-                UserDTO.Instance.FirstName = r["FirstName"].ToString();
-                UserDTO.Instance.LastName = r["LastName"].ToString();
-                UserDTO.Instance.Address = r["UserAddress"].ToString();
-                UserDTO.Instance.sex = r["Sex"].ToString();
+               
+                
+                UserDTO.Instance.sex = r["Sex"].ToString().Trim();
                 UserDTO.Instance.UserType = r["UserType"].ToString().Trim();
-                UserDTO.Instance.DepartmentCode = r["Dcode"].ToString();
-                UserDTO.Instance.userID = r["uID"].ToString();
-                UserDTO.Instance.DepartmentName = r["Dname"].ToString();
+                UserDTO.Instance.DepartmentCode = r["Dcode"].ToString().Trim();
+                UserDTO.Instance.userID = r["uID"].ToString().Trim().Trim();
+                UserDTO.Instance.DepartmentName = r["Dname"].ToString().Trim();
+                UserDTO.Instance.Username = username;
+                UserDTO.Instance.password = password;
+                try
+                {
+                    UserDTO.Instance.FirstName = r["FirstName"].ToString().Trim();
+                    UserDTO.Instance.LastName = r["LastName"].ToString().Trim();
+                    UserDTO.Instance.Address = r["UserAddress"].ToString().Trim();
+                    UserDTO.Instance.DateOfBirth = (DateTime)r["DateOfBirth"];
+                   
+                }
+                catch(Exception e)
+                {
+
+                }
                 return true;
             }
 
             return false;
          
+        }
+
+        public List<CourseDTO> getCourse()
+        {
+            List<CourseDTO> lst = new List<CourseDTO>();
+            string query = $"SELECT * FROM COURSE JOIN STUDY ON COURSEID= STUDY.idCourse JOIN SYSTEMUSER on uid=IDheader WHERE idUSER= '{UserDTO.Instance.userID}'";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            foreach(DataRow i in result.Rows )
+            {
+                CourseDTO t = new CourseDTO();
+                t.CourseID = i["courseID"].ToString().Trim();
+                t.CourseName = i["coursename"].ToString().Trim();
+                t.idheader = i["idheader"].ToString().Trim();
+                t.idmanager = i["idmnglecturer"].ToString().Trim();
+                t.LecturerName = i["firstname"].ToString().Trim() + " " + i["lastname"].ToString().Trim();
+                lst.Add(t);
+            }
+            return lst;
+        }
+        public List<CourseDTO> getCourseTeacher()
+        {
+            List<CourseDTO> lst = new List<CourseDTO>();
+            string query = $"SELECT * FROM COURSE JOIN STUDY ON COURSEID= STUDY.idCourse JOIN SYSTEMUSER on uid=IDheader WHERE idUSER= '{UserDTO.Instance.userID}'";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow i in result.Rows)
+            {
+                CourseDTO t = new CourseDTO();
+                t.CourseID = i["courseID"].ToString().Trim();
+                t.CourseName = i["coursename"].ToString().Trim();
+                t.idheader = i["idheader"].ToString().Trim();
+                t.idmanager = i["idmnglecturer"].ToString().Trim();
+                t.LecturerName = i["firstname"].ToString().Trim() + " " + i["lastname"].ToString().Trim();
+                lst.Add(t);
+            }
+            return lst;
         }
     }
 }

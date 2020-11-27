@@ -55,7 +55,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbnguoirade = new System.Windows.Forms.Label();
             this.pn_search = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.bnSearch = new System.Windows.Forms.Button();
@@ -319,7 +319,7 @@
             // 
             this.panel8.Controls.Add(this.label8);
             this.panel8.Controls.Add(this.panel9);
-            this.panel8.Controls.Add(this.label9);
+            this.panel8.Controls.Add(this.lbnguoirade);
             this.panel8.Location = new System.Drawing.Point(554, 94);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(526, 66);
@@ -342,14 +342,14 @@
             this.panel9.Size = new System.Drawing.Size(358, 2);
             this.panel9.TabIndex = 6;
             // 
-            // label9
+            // lbnguoirade
             // 
-            this.label9.Location = new System.Drawing.Point(163, 21);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(358, 30);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Trần Ngọc bảo duy";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbnguoirade.Location = new System.Drawing.Point(163, 21);
+            this.lbnguoirade.Name = "lbnguoirade";
+            this.lbnguoirade.Size = new System.Drawing.Size(358, 30);
+            this.lbnguoirade.TabIndex = 5;
+            this.lbnguoirade.Text = "Trần Ngọc bảo duy";
+            this.lbnguoirade.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pn_search
             // 
@@ -500,7 +500,7 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbnguoirade;
         private System.Windows.Forms.Panel pn_search;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel11;

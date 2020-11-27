@@ -38,10 +38,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.flpListCourse.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -79,7 +79,7 @@
             this.flpListCourse.Controls.Add(this.panel2);
             this.flpListCourse.Location = new System.Drawing.Point(3, 132);
             this.flpListCourse.Name = "flpListCourse";
-            this.flpListCourse.Size = new System.Drawing.Size(1388, 644);
+            this.flpListCourse.Size = new System.Drawing.Size(1388, 708);
             this.flpListCourse.TabIndex = 4;
             // 
             // panel2
@@ -97,28 +97,27 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(622, 19);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(345, 30);
+            this.label3.Size = new System.Drawing.Size(26, 30);
             this.label3.TabIndex = 4;
-            this.label3.Text = "12-2-2020 12:53 AM";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Visible = false;
+            this.label3.Text = "1";
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(417, 21);
+            this.label2.Location = new System.Drawing.Point(553, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 30);
+            this.label2.Size = new System.Drawing.Size(524, 30);
             this.label2.TabIndex = 3;
             this.label2.Text = "Mr Duy";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(16, 21);
+            this.label4.Location = new System.Drawing.Point(54, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(395, 37);
+            this.label4.Size = new System.Drawing.Size(505, 37);
             this.label4.TabIndex = 2;
             this.label4.Text = "Priciple progaming language";
             // 
@@ -132,30 +131,21 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Enroll";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(735, 90);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 30);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Date Test";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(468, 90);
+            this.label5.Location = new System.Drawing.Point(757, 90);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(117, 30);
             this.label5.TabIndex = 9;
             this.label5.Text = "Lecturter";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(105, 90);
+            this.label7.Location = new System.Drawing.Point(276, 90);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(178, 30);
             this.label7.TabIndex = 8;
@@ -171,12 +161,25 @@
             this.btnSearch.Size = new System.Drawing.Size(41, 41);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
+            this.btnReset.Location = new System.Drawing.Point(3, 93);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(35, 36);
+            this.btnReset.TabIndex = 10;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // UCEnroll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.flpListCourse);
@@ -187,10 +190,11 @@
             this.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCEnroll";
-            this.Size = new System.Drawing.Size(1394, 776);
+            this.Size = new System.Drawing.Size(1401, 871);
             this.Load += new System.EventHandler(this.UCEnroll_Load);
             this.flpListCourse.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,12 +208,12 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.FlowLayoutPanel flpListCourse;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnReset;
     }
 }

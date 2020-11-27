@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MultiplechoiseSystem.FORM;
 using MultiplechoiseSystem.DAO;
+using MultiplechoiseSystem.DTO;
 namespace MultiplechoiseSystem.FORM
 {
     public partial class UCEnroll : UserControl
@@ -25,7 +26,7 @@ namespace MultiplechoiseSystem.FORM
             frm.showAlert(msg, type);
 
         }
-        private Panel EnrollCourse(string NameCourse, string Lecturer, string DateTest)
+        private Panel EnrollCourse(int stt,CourseDTO C)
         {
             Panel course = new Panel();
             course.Size = new Size(1351, 69);
@@ -33,21 +34,29 @@ namespace MultiplechoiseSystem.FORM
             Label name = new Label();
             Label nametech = new Label();
             Label date = new Label();
+            Label STT = new Label();
+            Label CourseID = new Label();
+            STT.Location = new Point(3, 25);
+            STT.Location = new Point(3, 25);
+            STT.Text = stt.ToString();
             Button dotest = new Button();
             Button review = new Button();
-            name.Text = NameCourse;
-            nametech.Text = Lecturer;
-            date.Text = DateTest;
+            name.Text =C.CourseID+"               "+ C.CourseName;
+            nametech.Text = C.LecturerName;
+            date.Text = "";
 
-            name.Location = new Point(16, 21);
+
+           
+
+            name.Location = new Point(55, 21);
             name.AutoSize = false;
             name.TextAlign = ContentAlignment.MiddleLeft;
-            name.Size = new Size(395, 37);
+            name.Size = new Size(505, 37);
 
-            nametech.Location = new Point(417, 19);
+            nametech.Location = new Point(550, 21);
             nametech.AutoSize = false;
             nametech.TextAlign = ContentAlignment.MiddleCenter;
-            nametech.Size = new Size(199, 30);
+            nametech.Size = new Size(524, 30);
 
             date.Location = new Point(622, 19);
             date.AutoSize = false;
@@ -61,26 +70,45 @@ namespace MultiplechoiseSystem.FORM
             review.Location = new Point(1173, 8);
             review.Size = new Size(175, 48);
             review.Click += enroll_Click;
+            review.Tag = C;
 
             course.Controls.Add(name);
             course.Controls.Add(nametech);
-            course.Controls.Add(date);
- 
+            course.Controls.Add(STT);
             course.Controls.Add(review);
+            
             return course;
         }
      
         private void enroll_Click(object sender, EventArgs e)
         {
-            Alert();
+            CourseDTO t = (sender as Button).Tag as CourseDTO;
+            string query = $"INSERT INTO STUDY VALUES ('{UserDTO.Instance.userID}','{t.CourseID}')";
+            try
+            {
+                DataProvider.Instance.ExecuteNonQuery(query);
+                Alert();
+            }
+            catch(Exception a)
+            {
+                Alert("Error !", FAlert.emType.error);
+            }
+           
         }
-
+        private void showAllcourse()
+        {
+            int stt = 1;
+            flpListCourse.Controls.Clear();
+            foreach (CourseDTO i in CourseDAO.Instance.getAllCourse())
+            {
+                flpListCourse.Controls.Add(EnrollCourse(stt,i));
+                stt++;
+            }
+        }
         private void UCEnroll_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 10; i++)
-            {
-                flpListCourse.Controls.Add(EnrollCourse("Priciple progaming language", "Mr Duy", "12-10-2020 12-10-AM"));
-            }
+
+            showAllcourse();
         }
 
         private void AutoCompleteSearch()
@@ -91,7 +119,7 @@ namespace MultiplechoiseSystem.FORM
             //use LINQ method syntax to pull the Title field from a DT into a string array...
             string[] postSource = data
                                 .AsEnumerable()
-                                .Select<System.Data.DataRow, String>(x => x.Field<String>("courseID"))
+                                .Select<System.Data.DataRow, String>(x => x.Field<String>("courseID").Trim())
                                 .ToArray();
             source.AddRange(postSource);
 
@@ -102,7 +130,27 @@ namespace MultiplechoiseSystem.FORM
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            flpListCourse.Controls.Clear(); int stt = 1;
+            foreach (CourseDTO i in CourseDAO.Instance.getAllCourseByID(tbCourseID.Text))
+            {
+                flpListCourse.Controls.Add(EnrollCourse(stt,i));
+                stt++;
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            showAllcourse();
         }
     }
 }

@@ -73,6 +73,26 @@ namespace MultiplechoiseSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit {
+            get {
+                object obj = ResourceManager.GetObject("edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editQuestion {
+            get {
+                object obj = ResourceManager.GetObject("editQuestion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap enroll {
             get {
                 object obj = ResourceManager.GetObject("enroll", resourceCulture);
@@ -86,6 +106,26 @@ namespace MultiplechoiseSystem.Properties {
         internal static System.Drawing.Bitmap enrollR {
             get {
                 object obj = ResourceManager.GetObject("enrollR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eye {
+            get {
+                object obj = ResourceManager.GetObject("eye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eye_30px {
+            get {
+                object obj = ResourceManager.GetObject("eye_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
