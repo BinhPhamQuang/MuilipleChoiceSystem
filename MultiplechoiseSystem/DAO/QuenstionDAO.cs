@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using MultiplechoiseSystem.DTO;
 using MultiplechoiseSystem.DAO;
+using System.Data;
+
 namespace MultiplechoiseSystem.DAO
 {   
     class QuenstionDAO
@@ -17,11 +19,26 @@ namespace MultiplechoiseSystem.DAO
         }
         private QuenstionDAO() { }
 
-        public List<QuenstionDAO> loadListQuestion()
+        public List<QuestionDTO> loadListQuestionByCourseIDtoCreateSetQuestion(string courseID,string NameExam)
         {
-            List<QuenstionDAO> quenstions = new List<QuenstionDAO>();
+            List<QuestionDTO> questions = new List<QuestionDTO>();
+            string query = $"select * from question where courseID='{courseID}' and qID not in (Select questionID from showquestion where examID='{NameExam}')";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow i in result.Rows)
+            {
+                QuestionDTO question = new QuestionDTO();
+                question.courseID = i["courseID"].ToString().Trim();
+                question.qText = i["qText"].ToString().Trim();
+                question.datecreated = (DateTime)i["DateCreated"];
+                question.qID = i["qID"].ToString().Trim();
+                   
+                questions.Add(question);
+            }
+            
 
-            return quenstions;
+
+        
+            return questions;
         }
         public int insertQuestion(QuestionDTO question )
         {
@@ -35,6 +52,67 @@ namespace MultiplechoiseSystem.DAO
             }
             
             return result;
+        }
+
+        public QuestionDTO LoadQuestionByID(string id)
+        {
+            QuestionDTO question = new QuestionDTO();
+            string query = $"select * from question where qID='{id}'";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            try
+            {
+                question.courseID = result.Rows[0]["courseID"].ToString().Trim();
+                question.qID = id;
+                question.qText = result.Rows[0]["qText"].ToString().Trim();
+                question.datecreated = (DateTime)result.Rows[0]["DateCreated"];
+                query = $"select * from ANSWER where questionID='{id}'";
+            }
+            catch
+            {
+               
+            }
+            result = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow i in result.Rows)
+            {
+                Answer answer = new Answer();
+                answer.key = i["aID"].ToString().Trim();
+                answer.text = i["aText"].ToString().Trim();
+                answer.inCorrect = int.Parse(i["isCorrect"].ToString());
+                question.answers.Add(answer);
+            }
+
+
+            return question;
+        }
+         
+        public List<QuestionDTO> LoadListShowQuestionWithAnswers(string examID,string courseID)
+        {
+            List<QuestionDTO> lst = new List<QuestionDTO>();
+            string query = $"SELECT * FROM SHOWQUESTION WHERE courseID='{courseID}'and examID='{examID}'";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            foreach(DataRow i in result.Rows)
+            {
+                QuestionDTO q = new QuestionDTO();
+                q.NO = (int)i["sNO"];
+                q.qID = i["questionID"].ToString().Trim();
+                q.examID = i["examID"].ToString().Trim();
+                q.courseID = courseID;
+                q.Option = (int)i["QuestionOption"];
+                query = $"select * from ANSWER where questionID='{q.qID}'";
+                result = DataProvider.Instance.ExecuteQuery(query);
+                foreach (DataRow j in result.Rows)
+                {
+                    Answer answer = new Answer();
+                    answer.key = j["aID"].ToString().Trim();
+                    answer.text = j["aText"].ToString().Trim();
+                    answer.inCorrect = int.Parse(j["isCorrect"].ToString());
+                    q.answers.Add(answer);
+                }
+
+
+                lst.Add(q);
+            }
+            return lst;
         }
     }
 }

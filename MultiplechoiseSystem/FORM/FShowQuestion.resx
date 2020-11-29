@@ -117,41 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="course" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\course.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hcmut" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hcmut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="editQuestion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editQuestion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enrollR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enrollR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="eye_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="registration_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\registration_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="trash_can_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\trash_can_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAATpJREFUSEvt
+        k8lOAkEURQsXBidwwkTd+DGsXZj4T25YuPQ3cGWE4DwFFHDvr+C5VhV204oCb0PgJjepd1/3O9XV3W6u
+        mdQ+Pjb2Hv5TRznnepZm5qEfPVwR/LLg3MkkZkZzZDA3VkI9tphxOtXgAs775Y8q4lTfArxF9oZvWK/6
+        KCX124N9C3CJrKscX1Av+fhLRbKn0DMHS+vkzwFwS72G40kou6RObsj049qm14kgHJ/0ml7mFViCJcH1
+        PgWUr8hWfCsta3DyeOU7Mh17RpbgAr2HAGzguIE6vWV/ybeswJvkrwF0Tr2I9UU/huyeWv96XxbgJLRK
+        LWjUr3AL8AHZB66xzhwp0sZauMl6w0d2R72LU//pgATsQyUr8MiaLjDucuPZJGbG+zhgMzPzX+AdXDZ2
+        Cc81U3LuEwE7utqUl65DAAAAAElFTkSuQmCC
+</value>
   </data>
 </root>

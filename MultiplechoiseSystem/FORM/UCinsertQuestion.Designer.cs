@@ -31,11 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCinsertQuestion));
             this.flp_question = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_createQuestion = new System.Windows.Forms.Panel();
+            this.panel_outcome = new System.Windows.Forms.Panel();
+            this.btnOKOC = new System.Windows.Forms.Button();
+            this.flp_loadOC = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnExitOC = new System.Windows.Forms.Button();
+            this.btnAddCO = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.lbIntrsuction = new System.Windows.Forms.Label();
             this.cbIDcourse = new System.Windows.Forms.ComboBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnenter = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.checkE = new System.Windows.Forms.CheckBox();
             this.checkD = new System.Windows.Forms.CheckBox();
@@ -53,25 +65,22 @@
             this.richC = new System.Windows.Forms.RichTextBox();
             this.richD = new System.Windows.Forms.RichTextBox();
             this.richE = new System.Windows.Forms.RichTextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.richQuestion = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tbCourseID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnManage = new System.Windows.Forms.Button();
-            this.lbIntrsuction = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnenter = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnReturn = new System.Windows.Forms.Button();
             this.btnCreateQuesttion = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnShowAll = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.flp_question.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel_createQuestion.SuspendLayout();
+            this.panel_outcome.SuspendLayout();
+            this.flp_loadOC.SuspendLayout();
             this.panel3.SuspendLayout();
             this.flp_answer.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +98,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button2);
@@ -99,6 +109,18 @@
             this.panel2.Size = new System.Drawing.Size(1353, 52);
             this.panel2.TabIndex = 0;
             this.panel2.Visible = false;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = global::MultiplechoiseSystem.Properties.Resources.trash_can_30px;
+            this.button3.Location = new System.Drawing.Point(89, 7);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(37, 35);
+            this.button3.TabIndex = 5;
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -108,6 +130,28 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "12-10-2020 12:50:00";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::MultiplechoiseSystem.Properties.Resources.editQuestion;
+            this.button1.Location = new System.Drawing.Point(46, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(37, 35);
+            this.button1.TabIndex = 4;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::MultiplechoiseSystem.Properties.Resources.eye;
+            this.button2.Location = new System.Drawing.Point(3, 7);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(37, 35);
+            this.button2.TabIndex = 1;
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -119,16 +163,19 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(99, 12);
+            this.label2.Location = new System.Drawing.Point(46, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(722, 30);
+            this.label2.Size = new System.Drawing.Size(775, 30);
             this.label2.TabIndex = 1;
             this.label2.Text = resources.GetString("label2.Text");
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel_createQuestion
             // 
             this.panel_createQuestion.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel_createQuestion.Controls.Add(this.panel_outcome);
+            this.panel_createQuestion.Controls.Add(this.btnAddCO);
             this.panel_createQuestion.Controls.Add(this.btnClose);
             this.panel_createQuestion.Controls.Add(this.lbIntrsuction);
             this.panel_createQuestion.Controls.Add(this.cbIDcourse);
@@ -141,7 +188,6 @@
             this.panel_createQuestion.Controls.Add(this.label13);
             this.panel_createQuestion.Controls.Add(this.label12);
             this.panel_createQuestion.Controls.Add(this.flp_answer);
-            this.panel_createQuestion.Controls.Add(this.label11);
             this.panel_createQuestion.Controls.Add(this.richQuestion);
             this.panel_createQuestion.Controls.Add(this.label10);
             this.panel_createQuestion.Location = new System.Drawing.Point(14, 463);
@@ -149,6 +195,91 @@
             this.panel_createQuestion.Size = new System.Drawing.Size(1368, 406);
             this.panel_createQuestion.TabIndex = 1;
             this.panel_createQuestion.Visible = false;
+            // 
+            // panel_outcome
+            // 
+            this.panel_outcome.Controls.Add(this.btnOKOC);
+            this.panel_outcome.Controls.Add(this.flp_loadOC);
+            this.panel_outcome.Controls.Add(this.btnExitOC);
+            this.panel_outcome.Location = new System.Drawing.Point(172, 0);
+            this.panel_outcome.Name = "panel_outcome";
+            this.panel_outcome.Size = new System.Drawing.Size(1196, 406);
+            this.panel_outcome.TabIndex = 14;
+            this.panel_outcome.Visible = false;
+            // 
+            // btnOKOC
+            // 
+            this.btnOKOC.BackColor = System.Drawing.Color.Turquoise;
+            this.btnOKOC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOKOC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOKOC.Location = new System.Drawing.Point(502, 357);
+            this.btnOKOC.Name = "btnOKOC";
+            this.btnOKOC.Size = new System.Drawing.Size(157, 43);
+            this.btnOKOC.TabIndex = 15;
+            this.btnOKOC.Text = "OK";
+            this.btnOKOC.UseVisualStyleBackColor = false;
+            this.btnOKOC.Click += new System.EventHandler(this.btnOKOC_Click);
+            // 
+            // flp_loadOC
+            // 
+            this.flp_loadOC.AutoScroll = true;
+            this.flp_loadOC.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.flp_loadOC.Controls.Add(this.checkBox1);
+            this.flp_loadOC.Location = new System.Drawing.Point(9, 36);
+            this.flp_loadOC.Name = "flp_loadOC";
+            this.flp_loadOC.Size = new System.Drawing.Size(1184, 318);
+            this.flp_loadOC.TabIndex = 16;
+            this.flp_loadOC.Paint += new System.Windows.Forms.PaintEventHandler(this.flp_loadOC_Paint);
+            // 
+            // btnExitOC
+            // 
+            this.btnExitOC.FlatAppearance.BorderSize = 0;
+            this.btnExitOC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExitOC.Image = ((System.Drawing.Image)(resources.GetObject("btnExitOC.Image")));
+            this.btnExitOC.Location = new System.Drawing.Point(1167, 0);
+            this.btnExitOC.Name = "btnExitOC";
+            this.btnExitOC.Size = new System.Drawing.Size(29, 30);
+            this.btnExitOC.TabIndex = 15;
+            this.btnExitOC.UseVisualStyleBackColor = true;
+            this.btnExitOC.Click += new System.EventHandler(this.btnExitOC_Click);
+            // 
+            // btnAddCO
+            // 
+            this.btnAddCO.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnAddCO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddCO.Location = new System.Drawing.Point(9, 202);
+            this.btnAddCO.Name = "btnAddCO";
+            this.btnAddCO.Size = new System.Drawing.Size(151, 49);
+            this.btnAddCO.TabIndex = 13;
+            this.btnAddCO.Text = "Add CO";
+            this.btnAddCO.UseVisualStyleBackColor = false;
+            this.btnAddCO.Click += new System.EventHandler(this.btnAddCO_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(1339, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(29, 30);
+            this.btnClose.TabIndex = 12;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // lbIntrsuction
+            // 
+            this.lbIntrsuction.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIntrsuction.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbIntrsuction.Image = ((System.Drawing.Image)(resources.GetObject("lbIntrsuction.Image")));
+            this.lbIntrsuction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbIntrsuction.Location = new System.Drawing.Point(963, 370);
+            this.lbIntrsuction.Name = "lbIntrsuction";
+            this.lbIntrsuction.Size = new System.Drawing.Size(356, 30);
+            this.lbIntrsuction.TabIndex = 8;
+            this.lbIntrsuction.Text = "Click \"check\" if it is the correct answer !";
+            this.lbIntrsuction.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cbIDcourse
             // 
@@ -160,6 +291,36 @@
             this.cbIDcourse.Name = "cbIDcourse";
             this.cbIDcourse.Size = new System.Drawing.Size(152, 35);
             this.cbIDcourse.TabIndex = 12;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClear.Location = new System.Drawing.Point(9, 310);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(151, 49);
+            this.btnClear.TabIndex = 11;
+            this.btnClear.Text = "Clear";
+            this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnenter
+            // 
+            this.btnenter.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.btnenter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnenter.Image = ((System.Drawing.Image)(resources.GetObject("btnenter.Image")));
+            this.btnenter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnenter.Location = new System.Drawing.Point(9, 257);
+            this.btnenter.Name = "btnenter";
+            this.btnenter.Size = new System.Drawing.Size(151, 49);
+            this.btnenter.TabIndex = 10;
+            this.btnenter.Text = "Enter";
+            this.btnenter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnenter.UseVisualStyleBackColor = false;
+            this.btnenter.Click += new System.EventHandler(this.btnenter_Click);
             // 
             // panel3
             // 
@@ -333,15 +494,6 @@
             this.richE.TabIndex = 7;
             this.richE.Text = "";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(4, 113);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(105, 30);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Answer:";
-            // 
             // richQuestion
             // 
             this.richQuestion.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -390,9 +542,10 @@
             // 
             // btnManage
             // 
-            this.btnManage.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnManage.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnManage.FlatAppearance.BorderSize = 0;
             this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManage.Location = new System.Drawing.Point(1043, 2);
+            this.btnManage.Location = new System.Drawing.Point(1087, 3);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(280, 41);
             this.btnManage.TabIndex = 9;
@@ -400,18 +553,31 @@
             this.btnManage.UseVisualStyleBackColor = false;
             this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
-            // lbIntrsuction
+            // btnCreateQuesttion
             // 
-            this.lbIntrsuction.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIntrsuction.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbIntrsuction.Image = ((System.Drawing.Image)(resources.GetObject("lbIntrsuction.Image")));
-            this.lbIntrsuction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbIntrsuction.Location = new System.Drawing.Point(963, 370);
-            this.lbIntrsuction.Name = "lbIntrsuction";
-            this.lbIntrsuction.Size = new System.Drawing.Size(356, 30);
-            this.lbIntrsuction.TabIndex = 8;
-            this.lbIntrsuction.Text = "Click \"check\" if it is the correct answer !";
-            this.lbIntrsuction.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCreateQuesttion.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnCreateQuesttion.FlatAppearance.BorderSize = 0;
+            this.btnCreateQuesttion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateQuesttion.Location = new System.Drawing.Point(527, 3);
+            this.btnCreateQuesttion.Name = "btnCreateQuesttion";
+            this.btnCreateQuesttion.Size = new System.Drawing.Size(280, 41);
+            this.btnCreateQuesttion.TabIndex = 11;
+            this.btnCreateQuesttion.Text = "Create new question";
+            this.btnCreateQuesttion.UseVisualStyleBackColor = false;
+            this.btnCreateQuesttion.Click += new System.EventHandler(this.btnCreateQuesttion_Click);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.FlatAppearance.BorderSize = 0;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
+            this.btnReturn.Location = new System.Drawing.Point(1282, 2);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(41, 41);
+            this.btnReturn.TabIndex = 10;
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Visible = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnSearch
             // 
@@ -425,101 +591,38 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // btnClear
+            // btnShowAll
             // 
-            this.btnClear.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
-            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(9, 310);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(151, 49);
-            this.btnClear.TabIndex = 11;
-            this.btnClear.Text = "Clear";
-            this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnShowAll.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnShowAll.FlatAppearance.BorderSize = 0;
+            this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowAll.Location = new System.Drawing.Point(807, 3);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(280, 41);
+            this.btnShowAll.TabIndex = 12;
+            this.btnShowAll.Text = "Show all";
+            this.btnShowAll.UseVisualStyleBackColor = false;
+            this.btnShowAll.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // btnenter
+            // checkBox1
             // 
-            this.btnenter.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.btnenter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnenter.Image = ((System.Drawing.Image)(resources.GetObject("btnenter.Image")));
-            this.btnenter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnenter.Location = new System.Drawing.Point(9, 257);
-            this.btnenter.Name = "btnenter";
-            this.btnenter.Size = new System.Drawing.Size(151, 49);
-            this.btnenter.TabIndex = 10;
-            this.btnenter.Text = "Enter";
-            this.btnenter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnenter.UseVisualStyleBackColor = false;
-            this.btnenter.Click += new System.EventHandler(this.btnenter_Click);
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::MultiplechoiseSystem.Properties.Resources.editQuestion;
-            this.button1.Location = new System.Drawing.Point(46, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 35);
-            this.button1.TabIndex = 4;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::MultiplechoiseSystem.Properties.Resources.eye;
-            this.button2.Location = new System.Drawing.Point(3, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(37, 35);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.FlatAppearance.BorderSize = 0;
-            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(1329, 3);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(41, 41);
-            this.btnReturn.TabIndex = 10;
-            this.btnReturn.UseVisualStyleBackColor = true;
-            this.btnReturn.Visible = false;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
-            // 
-            // btnCreateQuesttion
-            // 
-            this.btnCreateQuesttion.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnCreateQuesttion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateQuesttion.Location = new System.Drawing.Point(757, 2);
-            this.btnCreateQuesttion.Name = "btnCreateQuesttion";
-            this.btnCreateQuesttion.Size = new System.Drawing.Size(280, 41);
-            this.btnCreateQuesttion.TabIndex = 11;
-            this.btnCreateQuesttion.Text = "Create new question";
-            this.btnCreateQuesttion.UseVisualStyleBackColor = false;
-            this.btnCreateQuesttion.Click += new System.EventHandler(this.btnCreateQuesttion_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1339, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(29, 30);
-            this.btnClose.TabIndex = 12;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.checkBox1.BackColor = System.Drawing.Color.SkyBlue;
+            this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(3, 3);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(1148, 41);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "CO2003 Mon hoc can duoc ba la al";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.Visible = false;
             // 
             // UCinsertQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.btnCreateQuesttion);
-            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnManage);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.panel4);
@@ -527,8 +630,9 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel_createQuestion);
             this.Controls.Add(this.flp_question);
+            this.Controls.Add(this.btnReturn);
             this.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCinsertQuestion";
             this.Size = new System.Drawing.Size(1401, 872);
             this.Load += new System.EventHandler(this.UCinsertQuestion_Load);
@@ -536,6 +640,8 @@
             this.panel2.ResumeLayout(false);
             this.panel_createQuestion.ResumeLayout(false);
             this.panel_createQuestion.PerformLayout();
+            this.panel_outcome.ResumeLayout(false);
+            this.flp_loadOC.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.flp_answer.ResumeLayout(false);
@@ -558,7 +664,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.RichTextBox richQuestion;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.FlowLayoutPanel flp_answer;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
@@ -586,5 +691,13 @@
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnCreateQuesttion;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnAddCO;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel_outcome;
+        private System.Windows.Forms.Button btnExitOC;
+        private System.Windows.Forms.FlowLayoutPanel flp_loadOC;
+        private System.Windows.Forms.Button btnOKOC;
+        private System.Windows.Forms.Button btnShowAll;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

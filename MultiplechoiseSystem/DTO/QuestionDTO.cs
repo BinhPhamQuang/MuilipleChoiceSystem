@@ -23,6 +23,9 @@ namespace MultiplechoiseSystem.DTO
         public string lecturername;
         public string courseID;
         public string courseName;
+        public int Option=1;
         public List<Answer> answers = new List<Answer>();
+        public string examID;
+        public int NO;
     }
 }

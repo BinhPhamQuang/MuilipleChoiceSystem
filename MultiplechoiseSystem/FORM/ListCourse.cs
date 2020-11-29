@@ -41,7 +41,7 @@ namespace MultiplechoiseSystem.FORM
             Label nametech = new Label();
             Label date = new Label();
             Button dotest = new Button();
-
+            
             name.Text = c.CourseID+"            "+c.CourseName;
             nametech.Text = c.LecturerName;
             date.Text =  "";
@@ -55,6 +55,7 @@ namespace MultiplechoiseSystem.FORM
             nametech.AutoSize = false;
             nametech.TextAlign = ContentAlignment.MiddleCenter;
             nametech.Size = new Size(350, 30);
+            
 
             date.Location = new Point(622, 19);
             date.AutoSize = false;
@@ -69,11 +70,37 @@ namespace MultiplechoiseSystem.FORM
             dotest.Click += viewExam_Click;
             dotest.Tag = c.CourseID;
             course.Controls.Add(name);
-            course.Controls.Add(nametech);
+            
             
             course.Controls.Add(dotest);
 
+            if (c.idheader==UserDTO.Instance.userID)
+            {
+                Button btnCreateSetQuestion = new Button();
+                btnCreateSetQuestion.BackColor = System.Drawing.SystemColors.MenuHighlight;
+                btnCreateSetQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                btnCreateSetQuestion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                btnCreateSetQuestion.Location = new System.Drawing.Point(603, 10);
+               
+                btnCreateSetQuestion.Size = new System.Drawing.Size(336, 48);
+                btnCreateSetQuestion.TabIndex = 4;
+                btnCreateSetQuestion.Text = "Create set of questions";
+                btnCreateSetQuestion.BringToFront();
+                btnCreateSetQuestion.Click += btnCreateSetQuestion_Click;
+                btnCreateSetQuestion.Tag = c;
+                course.Controls.Add(btnCreateSetQuestion);
+            }
+            else
+                course.Controls.Add(nametech);
+
             return course;
+        }
+
+        private void btnCreateSetQuestion_Click(object sender, EventArgs e)
+        {
+            CourseDTO course = (sender as Button).Tag as CourseDTO;
+            FCreateSetQuestions f = new FCreateSetQuestions(course.CourseID);
+            f.ShowDialog();
         }
 
         private void viewExam_Click(object sender, EventArgs e)
@@ -98,9 +125,19 @@ namespace MultiplechoiseSystem.FORM
         
         private void ListCourse_Load(object sender, EventArgs e)
         {
-            foreach(CourseDTO i in UserDAO.Instance.getCourse())
+            if (UserDTO.Instance.UserType == UserDTO.Instance.Student)
             {
-                flpListCourse.Controls.Add(CourseDetail(i));
+                foreach (CourseDTO i in UserDAO.Instance.getCourse())
+                {
+                    flpListCourse.Controls.Add(CourseDetail(i));
+                }
+            }
+            if (UserDTO.Instance.UserType== UserDTO.Instance.Lecturer)
+            {
+                foreach (CourseDTO i in UserDAO.Instance.getCourseTeachByTeacher())
+                {
+                    flpListCourse.Controls.Add(CourseDetail(i));
+                }
             }
         }
 

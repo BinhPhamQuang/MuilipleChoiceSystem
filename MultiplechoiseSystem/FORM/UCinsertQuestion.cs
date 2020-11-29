@@ -13,6 +13,7 @@ namespace MultiplechoiseSystem.FORM
 {
     public partial class UCinsertQuestion : UserControl
     {
+
         public UCinsertQuestion()
         {
             InitializeComponent();
@@ -37,18 +38,36 @@ namespace MultiplechoiseSystem.FORM
             Button btnEye = new Button();
             Button btnEdit = new Button();
 
+
+            Button btnRecycleBin = new Button();
+
+            btnRecycleBin.FlatAppearance.BorderSize = 0;
+            btnRecycleBin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnRecycleBin.Image = global::MultiplechoiseSystem.Properties.Resources.trash_can_30px;
+            btnRecycleBin.Location = new System.Drawing.Point(89, 7);
+            btnRecycleBin.Click += btnReccycleBin_Click;
+            btnRecycleBin.Tag = question;
+
+            btnRecycleBin.Size = new System.Drawing.Size(37, 35);
+
+            btnRecycleBin.UseVisualStyleBackColor = true;
+
             btnEye.FlatAppearance.BorderSize = 0;
             btnEye.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnEye.Image = global::MultiplechoiseSystem.Properties.Resources.eye ;
             btnEye.Location = new System.Drawing.Point(3, 7);
              
             btnEye.Size = new System.Drawing.Size(37, 35);
+            btnEye.Click += btnEye_Click;
+            btnEye.Tag = question;
 
             btnEdit.FlatAppearance.BorderSize = 0;
             btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnEdit.Image = global::MultiplechoiseSystem.Properties.Resources.editQuestion;
             btnEdit.Location = new System.Drawing.Point(46, 8);
-                    btnEdit.Size = new System.Drawing.Size(37, 35);
+            btnEdit.Size = new System.Drawing.Size(37, 35);
+            btnEdit.Click += btnEdit_Click;
+            btnEdit.Tag = question;
 
             Label courseID = new Label();
             Label questionText = new Label();
@@ -56,11 +75,11 @@ namespace MultiplechoiseSystem.FORM
             Label DateCreated = new Label();
 
             courseID.Location = new Point(3, 11);
-            questionText.Location = new Point(99, 12);
+            questionText.Location = new Point(122, 12);
             Lecturer.Location = new Point(827, 11);
             DateCreated.Location = new Point(1106, 11);
 
-            questionText.Size = new Size(722, 30);
+            questionText.Size = new Size(699, 30);
 
             questionText.AutoSize = false;
             Lecturer.AutoSize = false;
@@ -75,18 +94,82 @@ namespace MultiplechoiseSystem.FORM
             courseID.Text = question.courseID;
             Lecturer.Text = question.lecturername;
             DateCreated.Text = question.datecreated.ToString("dd/MM/yyyy h:mm tt");
-            
+            btnEdit.Visible = true;
+            btnRecycleBin.Visible = true;
+          
 
             result.Controls.Add(btnEye);
             result.Controls.Add(questionText);
             result.Controls.Add(Lecturer);
             result.Controls.Add(DateCreated);
             result.Controls.Add(btnEdit);
+            result.Controls.Add(btnRecycleBin);
             if (isManage==false)
             {
+              
                 btnEdit.Visible = false;
+                btnRecycleBin.Visible = false;
+                questionText.Size = new Size(775,  30);
+                questionText.Location = new Point(46, 12);
             }
             return result;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            QuestionDTO question = (sender as Button).Tag as QuestionDTO;
+            flp_question.Size = new Size(1389, 392);
+            panel_createQuestion.Visible = true;
+
+            question = QuenstionDAO.Instance.LoadQuestionByID(question.qID);
+            richQuestion.Text = question.qText;
+            richA.Text = question.answers[0].text;
+            if (question.answers[0].inCorrect == 1)
+                checkA.Checked = true;
+            richA.Text = question.answers[0].text;
+            if (question.answers[0].inCorrect == 1)
+                checkA.Checked = true;
+
+            richB.Text = question.answers[1].text;
+            if (question.answers[1].inCorrect == 1)
+                checkB.Checked = true;
+
+            richC.Text = question.answers[2].text;
+            if (question.answers[2].inCorrect == 1)
+                checkC.Checked = true;
+
+            richD.Text = question.answers[3].text;
+            if (question.answers[3].inCorrect == 1)
+                checkD.Checked = true;
+
+            try
+            {
+                richE.Text = question.answers[4].text;
+                if (question.answers[4].inCorrect == 1)
+                    checkE.Checked = true;
+            }
+            catch
+            {
+               
+            }
+
+
+        }
+
+        private void btnReccycleBin_Click(object sender, EventArgs e)
+        {
+            QuestionDTO question = (sender as Button).Tag as QuestionDTO;
+            string query = $"Delete  QUESTION where qID={question.qID}";
+            DataProvider.Instance.ExecuteNonQuery(query);
+            LoadMyQuestion();
+            Alert("Success !", FAlert.emType.success);
+        }
+
+        private void btnEye_Click(object sender, EventArgs e)
+        {
+            QuestionDTO question = (sender as Button).Tag as QuestionDTO;
+            FShowQuestion showQuestion = new FShowQuestion(question.qID);
+            showQuestion.ShowDialog();
         }
 
         private void LoadAllQuestion()
@@ -101,10 +184,27 @@ namespace MultiplechoiseSystem.FORM
                 question.lecturername = i["LastName"].ToString().Trim() + " " + i["FirstName"].ToString().Trim();
                 question.datecreated = (DateTime)i["DateCreated"];
                 question.qText = i["qText"].ToString().Replace("\n"," ");
+                question.qID = i["qID"].ToString().Trim();
                 flp_question.Controls.Add(ShowQuestion(question));
             }
 
 
+        }
+        private void LoadMyQuestion()
+        {
+            flp_question.Controls.Clear();
+            string query = $"select * from QUESTION  where userID= '{UserDTO.Instance.userID}'";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow i in result.Rows)
+            {
+                QuestionDTO question = new QuestionDTO();
+                question.courseID = i["courseID"].ToString().Trim();
+                question.lecturername = UserDTO.Instance.FirstName + " " + UserDTO.Instance.LastName;
+                question.datecreated = (DateTime)i["DateCreated"];
+                question.qText = i["qText"].ToString().Replace("\n", " ");
+                question.qID = i["qID"].ToString().Trim();
+                flp_question.Controls.Add(ShowQuestion(question));
+            }
         }
         private void UCinsertQuestion_Load(object sender, EventArgs e)
         {
@@ -235,7 +335,10 @@ namespace MultiplechoiseSystem.FORM
                 question.answers.Add(ee);
 
             QuenstionDAO.Instance.insertQuestion(question);
-            LoadAllQuestion();
+            if (isManage == false)
+                LoadAllQuestion();
+            else
+                LoadMyQuestion();
             Alert("Success !",FAlert.emType.success);
             btnClear_Click(sender, e);
 
@@ -245,6 +348,9 @@ namespace MultiplechoiseSystem.FORM
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            btnShowAll.BackColor = Color.DeepSkyBlue;
+            btnCreateQuesttion.BackColor = Color.DeepSkyBlue;
+            btnManage.BackColor = Color.DeepSkyBlue;
             btnReturn.Visible = true;
             flp_question.Controls.Clear();
             if (tbCourseID.Text.Length != 0)
@@ -267,17 +373,28 @@ namespace MultiplechoiseSystem.FORM
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
+            btnShowAll.BackColor = Color.SteelBlue;
+            btnCreateQuesttion.BackColor = Color.DeepSkyBlue;
+            btnManage.BackColor = Color.DeepSkyBlue;
             btnReturn.Visible = false;
+            isManage = false;
             LoadAllQuestion();
         }
 
         private void btnManage_Click(object sender, EventArgs e)
         {
+            btnShowAll.BackColor = Color.DeepSkyBlue;
+            btnCreateQuesttion.BackColor = Color.DeepSkyBlue;
+            btnManage.BackColor = Color.SteelBlue;
+            isManage = true;
             btnReturn.Visible = true;
+            LoadMyQuestion();
+            
         }
 
         private void btnCreateQuesttion_Click(object sender, EventArgs e)
         {
+            btnClear_Click(sender, e);
             flp_question.Size = new Size(1389, 392);
             panel_createQuestion.Visible = true;
         }
@@ -286,6 +403,58 @@ namespace MultiplechoiseSystem.FORM
         {
             panel_createQuestion.Visible = false;
             flp_question.Size = new Size(1389, 820);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+        private void btnAddCO_Click(object sender, EventArgs e)
+        {
+            panel_outcome.Visible = true;
+            foreach (CourseOutcomeDTO i in CourseDAO.Instance.getOutcome(cbIDcourse.Text))
+            {
+                flp_loadOC.Controls.Add(cbOutcome(i.cID+"  "+i.text));
+            }
+        
+           
+
+        }
+        private CheckBox cbOutcome(string text)
+        {
+            CheckBox chx = new CheckBox();
+            chx.Text = text;
+            chx.AutoSize = false;
+            chx.Size = new Size(1148, 41);
+            chx.BackColor = Color.SkyBlue;
+            return chx;
+        }
+        private void btnExitOC_Click(object sender, EventArgs e)
+        {
+            panel_outcome.Visible = false;
+        }
+
+        private void btnOKOC_Click(object sender, EventArgs e)
+        {
+            panel_outcome.Visible = false;
+            Alert("Success !", FAlert.emType.success);
+
+        }
+
+        private void flp_loadOC_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

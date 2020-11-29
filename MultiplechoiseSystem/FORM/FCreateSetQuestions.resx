@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAsNJREFUWEft
+        mD1PVEEUhi9iNIYEI0ZaCqXWVksgGrBAsdQ/oK0f9GItdgS/RW1MrPQXaGNpY2OhARWMlYmNJoq+756Z
+        yezhMHPv7r03FrzJEzY7zzlzlzN3l6XYSQOZ31UUzwxWsDYuSl8ZZy/VuwPW5kVJZKAoPoK/2/AWyh4x
+        e8pe9lA9Yz44L5kJiJuqMIBXuui8ykHtLaunYxPKhJiZoNFto4GHjabFrJRp1qpeAey57LxSGUbRqm4S
+        8RnOiKilchA1X1SPmFU4w6KWzyQKt33F4LnzsqGramM4kUkxKwa/9jtGwwCU82Imc8Gq9fA4Oa+n5Eb9
+        Hc6YqGbG6KiamJ5GqzOFRqlRv4IzKGpXBrH2WrkxvY9WB2O4Z2wQgHJVzK5cs1wPet51Xi3hqNf0JhE/
+        4RwVtZNjeO6XcmJqGa1ObtTv4OwjfKzWYjjaKTasPRjLfWPDANZvgkVrzcPj4to1khFssqE3jfjjsNbI
+        OntIq+YyY2xchuZGq4MxPTAuIAmPhytvJfux6Sd9EQnWWCOl7eW0cSEmcGekpN2cwuaptx0Pz95JKWkv
+        vJvX1YWk4N17QEpbCA78I+MikqDmoStvPGetCygDas9Ii+bCuzf1mZx7o+bdXPtncAjGtGJsGsD6dbBg
+        rXl4PFy72pMb7Rs4uwkfq7Uu2IsN60zurv0B57ConRzhc8qJqfczGWN5bGwSgHJRzK5cslwPj4vz+s6c
+        tUHECzj4sSUDePJl5G0BTt+jzv159RXOqKhmRumompj+Ro0xPDGaBqDMipnMrFXr4fFxXuUkR4vGpb/0
+        wM196ZoTs3wOofCbbhTxHs6QqKUyxBrVI2YDTvlR4xU/NZp4fkM5LmalnGCt6hXgcXJeNuesBh40WnBe
+        5aD2htXTAyU/aoj//T8wr+CVLhssYa2ufwEvqd4dsHZZlJ3UlaL4B2I4FPucsbk/AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAZ1JREFUSEvt
+        lr1KA0EUhSfapbAWfAZtNuALSGx9AMEqiUJQsBFiEfANLBWxSSH4AFrYi0pqsbOw8KcIWImVfnfm7rpZ
+        kjjDbgRJPjjM3pm557AbMrtmoplFtRljztC5qGTMFXpET4G6w2vDunqwScMLgUex1OQZ3QfqC33iueOs
+        R6Bhx1paaO4yNFw1kmW0ghakkGCGXQ3flrmhxHeppcUzeEmCVNcyIdcMFVTl+oNxX+YHkiO4okEN3Z8O
+        FuLwliszjDFYWGNOHvu6K1OMOVj8T7P+lhzBo37jhEH+lhzBwiKK0DwqabDUCUHB1CeYPDDaA8VH7L9E
+        77TPORcHa/7BIM2teM1Th/T03a0Qr2v5w9CFgvg3wfxcZhXtBaqKpDchKJj6gO4e6gaqR3vbuTiCgjG4
+        ZWi6KogmvTd6bQkN9v0fZ0lOsZhpcMI0WPjr4IgmebsUEqxe0W/B8rFXRvaQLyIYxKss3gODYYvNryym
+        X3H21ErP+Uh6pDcz90ZG3UX1Ix/0dTbZRyJi8wVjJz3nqY72JnN41zRjIjHmGwpW1eBcNLvBAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAH2SURBVEhL7Za9L2RRGMbvGlQK0yjEV6HYUqLUsItSlBIK1UYl220r4Q/YkEg2GsUqNlH4qlQE
+        CUGiFcVGYuhkCwSJ3f09c97DuObrzr3R8CRP3u/3Pefce+ZO8I43j49wMCZbYGRMfAiCf3FIj1HXKhr8
+        4PWqIPgehdTsxh6MrKQ4Tu1bH8yzm8JeQm2QLT1M3OOKgeQGo2+Y3Wb2i7eYxc0rBpIbDNphB6zNWk4P
+        09/bRAdHQXKD0dfgH9TsrqSHyVHPKgZedfA1/A1P4Q18gAekDkPWVD7KXXUzeXvKNV7BS5Pet0tek0sv
+        jTEKjpADzsyLVnIy1nwTuxumshEne/BvWfwMO+9HIw17I7CPZsdqyjlOY/vjVHPF/ZAUgRkbvo/94ti7
+        LRiV29T6XQpf5Zd0ZhYpfDvmH3KuJ/jBxyzpRymSp5dIjT678kfkGyz0W/8Vsx/RpQBNf5pdFORewFvU
+        aqhj/SbiW1UfSe+zeA2+O5hBf4Y0zr/wFL3OuQoj1KToY1JcSejnUIt9Dna7YMkn6HP+WPORHF0Xv+NG
+        +EUk9ks9JL3P4gV3LNQTWFRhGbyXpCb2M85FK/wEw1col5PWKPZbHRVVNDpUM4419x7re91pUih5jytB
+        Ir9clSLx3+oo0PGNMGAZ6spomKT+DoW+TkHwH3w79AgDDPEhAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value> practice these Mining Engineering interview questions and answer regularly to prepare for campus/off-campus interviews, pool-campus interviews, walk-in interviews and various company interviews in Mining En</value>
+  </data>
+  <data name="btnClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAATpJREFUSEvt
+        k8lOAkEURQsXBidwwkTd+DGsXZj4T25YuPQ3cGWE4DwFFHDvr+C5VhV204oCb0PgJjepd1/3O9XV3W6u
+        mdQ+Pjb2Hv5TRznnepZm5qEfPVwR/LLg3MkkZkZzZDA3VkI9tphxOtXgAs775Y8q4lTfArxF9oZvWK/6
+        KCX124N9C3CJrKscX1Av+fhLRbKn0DMHS+vkzwFwS72G40kou6RObsj049qm14kgHJ/0ml7mFViCJcH1
+        PgWUr8hWfCsta3DyeOU7Mh17RpbgAr2HAGzguIE6vWV/ybeswJvkrwF0Tr2I9UU/huyeWv96XxbgJLRK
+        LWjUr3AL8AHZB66xzhwp0sZauMl6w0d2R72LU//pgATsQyUr8MiaLjDucuPZJGbG+zhgMzPzX+AdXDZ2
+        Cc81U3LuEwE7utqUl65DAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value> practice these Mining Engineering interview questions and answer regularly to prepare for campus/off-campus interviews, pool-campus interviews, walk-in interviews and various company interviews in Mining En</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value> practice these Mining Engineering interview questions and answer regularly to prepare for campus/off-campus interviews, pool-campus interviews, walk-in interviews and various company interviews in Mining En</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value> practice these Mining Engineering interview questions and answer regularly to prepare for campus/off-campus interviews, pool-campus interviews, walk-in interviews and various company interviews in Mining En</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value> practice these Mining Engineering interview questions and answer regularly to prepare for campus/off-campus interviews, pool-campus interviews, walk-in interviews and various company interviews in Mining En</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value> practice these Mining Engineering interview questions and answer regularly to prepare for campus/off-campus interviews, pool-campus interviews, walk-in interviews and various company interviews in Mining En</value>
+  </data>
+</root>

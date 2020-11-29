@@ -35,6 +35,7 @@
             this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCourse = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnCreateQuestion = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnEditProfile = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.buttonExit = new System.Windows.Forms.PictureBox();
             this.panel_main = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnCreateQuestion = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.flpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -139,6 +139,26 @@
             this.button1.Text = "Enroll";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnCreateQuestion
+            // 
+            this.btnCreateQuestion.FlatAppearance.BorderSize = 0;
+            this.btnCreateQuestion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnCreateQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateQuestion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateQuestion.ForeColor = System.Drawing.Color.White;
+            this.btnCreateQuestion.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateQuestion.Image")));
+            this.btnCreateQuestion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreateQuestion.Location = new System.Drawing.Point(4, 308);
+            this.btnCreateQuestion.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreateQuestion.Name = "btnCreateQuestion";
+            this.btnCreateQuestion.Size = new System.Drawing.Size(321, 144);
+            this.btnCreateQuestion.TabIndex = 4;
+            this.btnCreateQuestion.Text = "Create question";
+            this.btnCreateQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCreateQuestion.UseVisualStyleBackColor = true;
+            this.btnCreateQuestion.Visible = false;
+            this.btnCreateQuestion.Click += new System.EventHandler(this.btnCreateQuestion_Click);
             // 
             // pictureBox1
             // 
@@ -300,26 +320,6 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnCreateQuestion
-            // 
-            this.btnCreateQuestion.FlatAppearance.BorderSize = 0;
-            this.btnCreateQuestion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnCreateQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateQuestion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateQuestion.ForeColor = System.Drawing.Color.White;
-            this.btnCreateQuestion.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateQuestion.Image")));
-            this.btnCreateQuestion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreateQuestion.Location = new System.Drawing.Point(4, 308);
-            this.btnCreateQuestion.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCreateQuestion.Name = "btnCreateQuestion";
-            this.btnCreateQuestion.Size = new System.Drawing.Size(321, 144);
-            this.btnCreateQuestion.TabIndex = 4;
-            this.btnCreateQuestion.Text = "Create question";
-            this.btnCreateQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreateQuestion.UseVisualStyleBackColor = true;
-            this.btnCreateQuestion.Visible = false;
-            this.btnCreateQuestion.Click += new System.EventHandler(this.btnCreateQuestion_Click);
             // 
             // FMains
             // 

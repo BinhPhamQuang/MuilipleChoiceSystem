@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 using MultiplechoiseSystem.DTO;
 namespace MultiplechoiseSystem.DAO
 {
-
+    class CourseOutcomeDTO
+    {
+        public CourseOutcomeDTO() { }
+        public string text;
+        public string cID;
+    }
     class CourseDAO
     {
         private static CourseDAO instance;
@@ -77,6 +82,22 @@ namespace MultiplechoiseSystem.DAO
 
                 lst.Add(t);
             }
+            return lst;
+        }
+
+        public List<CourseOutcomeDTO> getOutcome(string courseID)
+        {
+            List<CourseOutcomeDTO> lst = new List<CourseOutcomeDTO>();
+            string query = $" select * from COURSE_OUTCOMES where courseID='{courseID}'";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            foreach( DataRow i in result.Rows)
+            {
+                CourseOutcomeDTO c = new CourseOutcomeDTO();
+                c.cID = i["cID"].ToString().Trim();
+                c.text = i["Content"].ToString().Trim();
+                lst.Add(c);
+            }
+
             return lst;
         }
     }

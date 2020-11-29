@@ -12,8 +12,8 @@ namespace MultiplechoiseSystem.DTO
         public string code;
         public string examID;
         public string courseID;
-        public string DateAppove;
-        public string DateComfirm;
+        public DateTime  DateAppove;
+        public DateTime  DateComfirm;
 
     }
 }
