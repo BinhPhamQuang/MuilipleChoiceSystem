@@ -37,6 +37,7 @@ namespace MultiplechoiseSystem.DAO
                 t.AcademyYear = int.Parse(i["academyyear"].ToString());
                 t.courseName = i["coursename"].ToString().Trim();
                 t.teacherCreate = i["firstname"].ToString().Trim() +" "+ i["lastname"].ToString().Trim();
+                t.ExamTime = (int)i["ExamTime"];
                 lst.Add(t);
         }
 

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label5.Text" xml:space="preserve">
+    <value> practice these Mining Engineering interview questions and answer regularly to prepare for campus/off-campus interviews, pool-campus interviews, walk-in interviews and various company interviews in Mining En</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -150,20 +153,17 @@
   </data>
   <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAH2SURBVEhL7Za9L2RRGMbvGlQK0yjEV6HYUqLUsItSlBIK1UYl220r4Q/YkEg2GsUqNlH4qlQE
-        CUGiFcVGYuhkCwSJ3f09c97DuObrzr3R8CRP3u/3Pefce+ZO8I43j49wMCZbYGRMfAiCf3FIj1HXKhr8
-        4PWqIPgehdTsxh6MrKQ4Tu1bH8yzm8JeQm2QLT1M3OOKgeQGo2+Y3Wb2i7eYxc0rBpIbDNphB6zNWk4P
-        09/bRAdHQXKD0dfgH9TsrqSHyVHPKgZedfA1/A1P4Q18gAekDkPWVD7KXXUzeXvKNV7BS5Pet0tek0sv
-        jTEKjpADzsyLVnIy1nwTuxumshEne/BvWfwMO+9HIw17I7CPZsdqyjlOY/vjVHPF/ZAUgRkbvo/94ti7
-        LRiV29T6XQpf5Zd0ZhYpfDvmH3KuJ/jBxyzpRymSp5dIjT678kfkGyz0W/8Vsx/RpQBNf5pdFORewFvU
-        aqhj/SbiW1UfSe+zeA2+O5hBf4Y0zr/wFL3OuQoj1KToY1JcSejnUIt9Dna7YMkn6HP+WPORHF0Xv+NG
-        +EUk9ks9JL3P4gV3LNQTWFRhGbyXpCb2M85FK/wEw1col5PWKPZbHRVVNDpUM4419x7re91pUih5jytB
-        Ir9clSLx3+oo0PGNMGAZ6spomKT+DoW+TkHwH3w79AgDDPEhAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAfZJREFUSEvt
+        lr0vZFEYxu8aVArTKMRXodhSotSwi1KUEgrVRiXbbSvhD9iQSDYaxSo2UfiqVAQJQaIVxUZi6GQLBInd
+        /T1z3sO45uvOvdHwJE/e7/c959x75k7wjjePj3AwJltgZEx8CIJ/cUiPUdcqGvzg9aog+B6F1OzGHoys
+        pDhO7VsfzLObwl5CbZAtPUzc44qB5Aajb5jdZvaLt5jFzSsGkhsM2mEHrM1aTg/T39tEB0dBcoPR1+Af
+        1OyupIfJUc8qBl518DX8DU/hDXyAB6QOQ9ZUPspddTN5e8o1XsFLk963S16TSy+NMQqOkAPOzItWcjLW
+        fBO7G6ayESd78G9Z/Aw770cjDXsjsI9mx2rKOU5j++NUc8X9kBSBGRu+j/3i2LstGJXb1PpdCl/ll3Rm
+        Fil8O+Yfcq4n+MHHLOlHKZKnl0iNPrvyR+QbLPRb/xWzH9GlAE1/ml0U5F7AW9RqqGP9JuJbVR9J77N4
+        Db47mEF/hjTOv/AUvc65CiPUpOhjUlxJ6OdQi30OdrtgySfoc/5Y85EcXRe/40b4RST2Sz0kvc/iBXcs
+        1BNYVGEZvJekJvYzzkUr/ATDVyiXk9Yo9lsdFVU0OlQzjjX3Hut73WlSKHmPK0Eiv1yVIvHf6ijQ8Y0w
+        YBnqymiYpP4Ohb5OQfAffDv0CAMM8SEAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value> practice these Mining Engineering interview questions and answer regularly to prepare for campus/off-campus interviews, pool-campus interviews, walk-in interviews and various company interviews in Mining En</value>
   </data>
   <data name="btnClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

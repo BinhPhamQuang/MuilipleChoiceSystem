@@ -64,6 +64,7 @@
             this.txtSearchResult = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pn_manage = new System.Windows.Forms.Panel();
+            this.btnDo = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -77,7 +78,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Controls.Add(this.lb_namecourse);
@@ -239,13 +240,13 @@
             // 
             // btnReview
             // 
-            this.btnReview.BackColor = System.Drawing.SystemColors.Menu;
+            this.btnReview.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnReview.FlatAppearance.BorderSize = 0;
             this.btnReview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReview.Location = new System.Drawing.Point(1196, 13);
+            this.btnReview.Location = new System.Drawing.Point(1167, 0);
             this.btnReview.Name = "btnReview";
-            this.btnReview.Size = new System.Drawing.Size(137, 41);
+            this.btnReview.Size = new System.Drawing.Size(218, 70);
             this.btnReview.TabIndex = 2;
             this.btnReview.Text = "Detail";
             this.btnReview.UseVisualStyleBackColor = false;
@@ -330,9 +331,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(3, 25);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(154, 30);
+            this.label8.Size = new System.Drawing.Size(155, 30);
             this.label8.TabIndex = 4;
-            this.label8.Text = "Người ra đề:";
+            this.label8.Text = "Created by:";
             // 
             // panel9
             // 
@@ -438,10 +439,24 @@
             this.pn_manage.Size = new System.Drawing.Size(177, 138);
             this.pn_manage.TabIndex = 1;
             // 
+            // btnDo
+            // 
+            this.btnDo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDo.Location = new System.Drawing.Point(503, 215);
+            this.btnDo.Name = "btnDo";
+            this.btnDo.Size = new System.Drawing.Size(230, 41);
+            this.btnDo.TabIndex = 13;
+            this.btnDo.Text = "Take test !";
+            this.btnDo.UseVisualStyleBackColor = false;
+            this.btnDo.Visible = false;
+            this.btnDo.Click += new System.EventHandler(this.btnDo_Click);
+            // 
             // UCCourseDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnDo);
             this.Controls.Add(this.pn_search);
             this.Controls.Add(this.pn_manage);
             this.Controls.Add(this.panel8);
@@ -511,5 +526,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel pn_manage;
+        private System.Windows.Forms.Button btnDo;
     }
 }

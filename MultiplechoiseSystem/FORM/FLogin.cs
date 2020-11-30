@@ -94,8 +94,7 @@ namespace MultiplechoiseSystem
                     
                 }
 
-                FTest a = new FTest();
-               a.Show();
+                
             }
             
             

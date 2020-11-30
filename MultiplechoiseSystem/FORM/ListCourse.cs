@@ -68,20 +68,21 @@ namespace MultiplechoiseSystem.FORM
             dotest.Location = new Point(939, 10);
             dotest.Size = new Size(210, 48);
             dotest.Click += viewExam_Click;
-            dotest.Tag = c.CourseID;
+      
+            dotest.Tag = c;
             course.Controls.Add(name);
             
             
             course.Controls.Add(dotest);
 
-            if (c.idheader==UserDTO.Instance.userID)
+            if (c.idheader == UserDTO.Instance.userID)
             {
                 Button btnCreateSetQuestion = new Button();
                 btnCreateSetQuestion.BackColor = System.Drawing.SystemColors.MenuHighlight;
                 btnCreateSetQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
                 btnCreateSetQuestion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 btnCreateSetQuestion.Location = new System.Drawing.Point(603, 10);
-               
+
                 btnCreateSetQuestion.Size = new System.Drawing.Size(336, 48);
                 btnCreateSetQuestion.TabIndex = 4;
                 btnCreateSetQuestion.Text = "Create set of questions";
@@ -90,10 +91,38 @@ namespace MultiplechoiseSystem.FORM
                 btnCreateSetQuestion.Tag = c;
                 course.Controls.Add(btnCreateSetQuestion);
             }
+
             else
-                course.Controls.Add(nametech);
+            {
+                if(c.idmanager== UserDTO.Instance.userID)
+                {
+                    Button btnCreateSetQuestion = new Button();
+                    btnCreateSetQuestion.BackColor = System.Drawing.SystemColors.MenuHighlight;
+                    btnCreateSetQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                    btnCreateSetQuestion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    btnCreateSetQuestion.Location = new System.Drawing.Point(603, 10);
+
+                    btnCreateSetQuestion.Size = new System.Drawing.Size(336, 48);
+                    btnCreateSetQuestion.TabIndex = 4;
+                    btnCreateSetQuestion.Text = "Create exams";
+                    btnCreateSetQuestion.BringToFront();
+                    btnCreateSetQuestion.Click += btnCreateExam_Click;
+                    btnCreateSetQuestion.Tag = c;
+                    course.Controls.Add(btnCreateSetQuestion);
+                }
+                else
+                    course.Controls.Add(nametech);
+            }
 
             return course;
+        }
+        private string idtemp;
+        private void btnCreateExam_Click(object sender, EventArgs e)
+        {
+            CourseDTO c = (sender as Button).Tag as CourseDTO;
+            idtemp = c.CourseID;
+            flpListCourse.Size = new Size(1192, 625);
+            panelCreateExam.Visible = true;
         }
 
         private void btnCreateSetQuestion_Click(object sender, EventArgs e)
@@ -106,8 +135,9 @@ namespace MultiplechoiseSystem.FORM
         private void viewExam_Click(object sender, EventArgs e)
         {
             flpExam.Controls.Clear();
-            string courseid = (sender as Button).Tag as string;
-            foreach(ExamDTO i in CourseDAO.Instance.getExam(courseid))
+            CourseDTO course = (sender as Button).Tag as CourseDTO;
+            UserDTO.Instance.courseSelected = course;
+            foreach (ExamDTO i in CourseDAO.Instance.getExam(course.CourseID))
             {
                 flpExam.Controls.Add(ExamDetail(i));
             }
@@ -115,6 +145,7 @@ namespace MultiplechoiseSystem.FORM
 
         private void view_Click(object sender, EventArgs e)
         {
+             
             UserDTO.Instance.examSelected = (sender as Button).Tag as ExamDTO;
             if (this.BtnViewClick != null)
             {
@@ -125,6 +156,7 @@ namespace MultiplechoiseSystem.FORM
         
         private void ListCourse_Load(object sender, EventArgs e)
         {
+            flpListCourse.Size = new Size(1192, 768);
             if (UserDTO.Instance.UserType == UserDTO.Instance.Student)
             {
                 foreach (CourseDTO i in UserDAO.Instance.getCourse())
@@ -135,6 +167,14 @@ namespace MultiplechoiseSystem.FORM
             if (UserDTO.Instance.UserType== UserDTO.Instance.Lecturer)
             {
                 foreach (CourseDTO i in UserDAO.Instance.getCourseTeachByTeacher())
+                {
+                    flpListCourse.Controls.Add(CourseDetail(i));
+                }
+            }
+            else
+            {
+                lb_header.Text = "";
+                foreach (CourseDTO i in UserDAO.Instance.getCourseOfManager())
                 {
                     flpListCourse.Controls.Add(CourseDetail(i));
                 }
@@ -159,6 +199,30 @@ namespace MultiplechoiseSystem.FORM
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            panelCreateExam.Visible = false;
+        }
+
+        private void txtNameExam_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        void Alert(string msg, FAlert.emType type)
+        {
+            FAlert frm = new FAlert();
+            frm.showAlert(msg, type);
+
+        }
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            string formatdate = $"{dateTest.Value.Year.ToString()}-{dateTest.Value.Month.ToString()}-{dateTest.Value.Day.ToString()} {cbHour.Text}:{numMinutes.Value.ToString()}:00";
+            string query = $"Insert into EXAM values ('{txtNameExam.Text}','{formatdate}','{idtemp}',2020,{numTimeTest.Value}) ";
+            DataProvider.Instance.ExecuteNonQuery(query);
+            btnClose_Click(sender, e);
+            Alert("Success !", FAlert.emType.success);
         }
     }
 }

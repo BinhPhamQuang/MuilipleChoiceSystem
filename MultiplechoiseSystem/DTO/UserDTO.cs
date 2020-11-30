@@ -30,6 +30,7 @@ namespace MultiplechoiseSystem.DTO
         public string Username;
         public string password;
 
+        public CourseDTO courseSelected;
         public ExamDTO examSelected;
     }
 }

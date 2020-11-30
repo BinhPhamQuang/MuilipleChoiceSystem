@@ -14,9 +14,11 @@ namespace MultiplechoiseSystem.FORM
     public partial class UCCourseDetail : UserControl
     {
         public EventHandler BtnCloseClick;
+         
         public UCCourseDetail()
         {
             InitializeComponent();
+            
             AutoCompleteSearch();
         }
 
@@ -100,10 +102,15 @@ namespace MultiplechoiseSystem.FORM
             scoreTest.TextAlign = ContentAlignment.MiddleCenter;
 
             detail.Text = "Detail";
-            detail.Location = new Point(1196, 13);
-            detail.Size = new Size(137, 41);
+            detail.Location = new Point(1167, 0);
+            detail.Size = new Size(218, 70);
             detail.FlatStyle = FlatStyle.Flat;
-            detail.BackColor = SystemColors.Menu;
+            detail.FlatAppearance.BorderSize = 0;
+            detail.BackColor = System.Drawing.SystemColors.ActiveCaption;
+        
+ 
+    
+ 
             detail.Click += Btndetail_Click;
             
 
@@ -118,30 +125,30 @@ namespace MultiplechoiseSystem.FORM
 
         private void Btndetail_Click(object sender, EventArgs e)
         {
-            FTest f = new FTest();
-            f.ShowDialog();
+            
         }
 
         private void DisplayManagerFunction()
         {   
-            /*
+            
             if (UserDTO.Instance.UserType.Trim()== UserDTO.Instance.Student)
             {
                 pn_search.Visible = false;
                 pn_manage.Visible = false;
+                
             }
             else
             {
                 pn_search.Visible = true;
                 pn_manage.Visible = true;
             }
-            */
+            
         }
 
         private void Displaylabel()
         {
-            lb_namecourse.Text = UserDTO.Instance.examSelected.courseName;
-            lbTimeTest.Text = UserDTO.Instance.examSelected.AcademyYear.ToString()+" minutes";
+            lb_namecourse.Text = UserDTO.Instance.examSelected.examID+"         "+ UserDTO.Instance.examSelected.courseName;
+            lbTimeTest.Text = UserDTO.Instance.examSelected.ExamTime+" minutes";
             label3.Text = UserDTO.Instance.examSelected.testDate.ToString();
             lbnguoirade.Text = UserDTO.Instance.examSelected.teacherCreate;
         }
@@ -149,13 +156,16 @@ namespace MultiplechoiseSystem.FORM
         {
             DisplayManagerFunction();
             Displaylabel();
-            
-            for (int i = 0; i < 20; i++)
-            {
-                flp_result.Controls.Add(createFrameResult("1", "Pham Quang Binh", 9.75, "12-5-2020 12:05AM"));
-              
-                    
-            }
+            if( UserDTO.Instance.UserType==UserDTO.Instance.Student)
+                CheckStatusReview();
+             
+        }
+        private void CheckStatusReview()
+        {
+            string query = $"select * from SHEET_ANSWER where examID='Final' and CourseID='CO2003' and userID='1'";
+            DataTable a=DataProvider.Instance.ExecuteQuery(query);
+            if (a.Rows.Count == 0)
+                btnDo.Visible = true;
         }
 
 
@@ -177,6 +187,17 @@ namespace MultiplechoiseSystem.FORM
         private void bnSearch_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDo_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+        
+            List<TestDTO> lst = TestDAO.Instance.getListTestByExamID_courseID(UserDTO.Instance.examSelected.examID, UserDTO.Instance.examSelected.courseID);
+
+            string codeexam = lst[random.Next(0, lst.Count)].code;
+            FTest f = new FTest(codeexam,UserDTO.Instance.examSelected.courseID, UserDTO.Instance.examSelected.examID,false);
+           f.ShowDialog();
         }
     }
 }

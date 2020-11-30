@@ -106,6 +106,42 @@ namespace MultiplechoiseSystem.DAO
                     answer.key = j["aID"].ToString().Trim();
                     answer.text = j["aText"].ToString().Trim();
                     answer.inCorrect = int.Parse(j["isCorrect"].ToString());
+                    answer.questionID = q.qID;
+                    q.answers.Add(answer);
+                }
+
+
+                lst.Add(q);
+            }
+            return lst;
+        }
+
+
+        public List<QuestionDTO> LoadListQuestionOfTest(string codeExam, string examID, string courseID)
+        {
+            List<QuestionDTO> lst = new List<QuestionDTO>();
+            string query = $"select * from question join SHOWQUESTION ON qID=questionID where question.qID in ( select distinct questionID from CREATE_TEST_QUESTION where courseID='CO2003' and codeExam='0'   )and examID='Final'";
+            //string query = $" select * from CREATE_TEST_QUESTION as C JOIN SHOWQUESTION as S ON S.sNO= C.sNO and C.questionID=S.questionID and S.courseID=C.courseID  JOIN QUESTION ON c.questionID= QUESTION.qID where C.codeExam='{codeExam}' and C.examID='{examID}'  and C.courseID='{courseID}' ";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow i in result.Rows)
+            {
+                QuestionDTO q = new QuestionDTO();
+                q.NO = (int)i["sNO"];
+                q.qID = i["questionID"].ToString().Trim();
+                q.examID = i["examID"].ToString().Trim();
+                q.courseID = courseID;
+                q.Option = (int)i["QuestionOption"];
+                q.qText = i["qText"].ToString().Trim();
+
+                query = $"select * from CREATE_TEST_QUESTION join ANSWER on aID=answerID and ANSWER.questionID=CREATE_TEST_QUESTION.questionID where CREATE_TEST_QUESTION.questionID='{q.qID}' and examID='{examID}' and codeExam='{codeExam}' and courseID='{courseID}'";
+                result = DataProvider.Instance.ExecuteQuery(query);
+                foreach (DataRow j in result.Rows)
+                {
+                    Answer answer = new Answer();
+                    answer.key = j["aID"].ToString().Trim();
+                    answer.text = j["aText"].ToString().Trim();
+                    answer.inCorrect = int.Parse(j["isCorrect"].ToString());
+                    answer.questionID = q.qID;
                     q.answers.Add(answer);
                 }
 

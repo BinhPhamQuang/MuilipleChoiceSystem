@@ -104,5 +104,22 @@ namespace MultiplechoiseSystem.DAO
             }
             return lst;
         }
+        public List<CourseDTO> getCourseOfManager()
+        {
+            List<CourseDTO> lst = new List<CourseDTO>();
+            string query = $"select * from course join systemuser on uId=IDmngLecturer where IDmngLecturer='{UserDTO.Instance.userID}'";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow i in result.Rows)
+            {
+                CourseDTO t = new CourseDTO();
+                t.CourseID = i["courseID"].ToString().Trim();
+                t.CourseName = i["coursename"].ToString().Trim();
+                t.idheader = i["idheader"].ToString().Trim();
+                t.idmanager = i["idmnglecturer"].ToString().Trim();
+                t.LecturerName = i["firstname"].ToString().Trim() + " " + i["lastname"].ToString().Trim();
+                lst.Add(t);
+            }
+            return lst;
+        }
     }
 }

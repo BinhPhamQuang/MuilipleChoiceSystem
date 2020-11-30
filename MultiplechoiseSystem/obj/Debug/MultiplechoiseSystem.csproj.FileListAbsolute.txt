@@ -15,7 +15,9 @@ C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\Multiplec
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.UCCourseDetail.resources
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.csprojAssemblyReference.cache
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.UCEditInfo.resources
-C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.FTest.resources
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.UCinsertQuestion.resources
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.FShowQuestion.resources
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.FCreateSetQuestions.resources
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.FConfirmTest.resources
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.UCoutcome.resources
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.SelectedAnswer.resources

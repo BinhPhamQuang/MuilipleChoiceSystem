@@ -63,8 +63,8 @@ namespace MultiplechoiseSystem.FORM
             cbIsMandantory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbIsMandantory.FormattingEnabled = true;
             cbIsMandantory.Items.AddRange(new object[] {
-            "Must answer",
-            "Do not answer"});
+            "Must do",
+            "Can not do"});
             cbIsMandantory.Location = new System.Drawing.Point(1240, 10);
          
             cbIsMandantory.Size = new System.Drawing.Size(186, 35);
@@ -289,6 +289,8 @@ namespace MultiplechoiseSystem.FORM
         private void btnView_Click(object sender, EventArgs e)
         {
             TestDTO test = (sender as Button).Tag as TestDTO;
+            FTest f = new FTest(test.code,test.courseID, test.examID, false);
+            f.ShowDialog();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -340,7 +342,7 @@ namespace MultiplechoiseSystem.FORM
                         List<int> randomAnswer = randomList(lst[randomQuestion[index]].answers.Count);
                         for (int indexAnswer=0; indexAnswer<randomAnswer.Count;indexAnswer++)
                         {
-                        query = $"INSERT INTO CREATE_TEST_QUESTION values ('{key[indexAnswer]}','{idCourse}','{code}','{cbExamName.Text}','{lst[randomQuestion[index]].NO}','{lst[randomQuestion[index]].qID}','{lst[randomQuestion[index]].answers[randomAnswer[indexAnswer]].key}')";
+                        query = $"INSERT INTO CREATE_TEST_QUESTION values ({indexAnswer},'{key[indexAnswer].ToString()}','{idCourse}','{code}','{cbExamName.Text}','{lst[randomQuestion[index]].NO}','{lst[randomQuestion[index]].qID}','{lst[randomQuestion[index]].answers[randomAnswer[indexAnswer]].key}')";
                         DataProvider.Instance.ExecuteNonQuery(query);
                         }
                     }

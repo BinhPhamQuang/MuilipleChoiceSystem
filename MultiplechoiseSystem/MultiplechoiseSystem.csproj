@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\CourseDAO.cs" />
+    <Compile Include="DAO\CourseOutcomesDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\QuenstionDAO.cs" />
     <Compile Include="DAO\TestDAO.cs" />
@@ -62,6 +63,12 @@
     </Compile>
     <Compile Include="FORM\FAlert.Designer.cs">
       <DependentUpon>FAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\FConfirmTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORM\FConfirmTest.Designer.cs">
+      <DependentUpon>FConfirmTest.cs</DependentUpon>
     </Compile>
     <Compile Include="FORM\FCreateSetQuestions.cs">
       <SubType>Form</SubType>
@@ -93,9 +100,7 @@
     <Compile Include="FORM\FShowQuestion.Designer.cs">
       <DependentUpon>FShowQuestion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORM\FTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FORM\FTest.cs" />
     <Compile Include="FORM\FTest.Designer.cs">
       <DependentUpon>FTest.cs</DependentUpon>
     </Compile>
@@ -129,10 +134,19 @@
     <Compile Include="FORM\UCinsertQuestion.Designer.cs">
       <DependentUpon>UCinsertQuestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORM\UCoutcome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORM\UCoutcome.Designer.cs">
+      <DependentUpon>UCoutcome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FORM\FAlert.resx">
       <DependentUpon>FAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\FConfirmTest.resx">
+      <DependentUpon>FConfirmTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORM\FCreateSetQuestions.resx">
       <DependentUpon>FCreateSetQuestions.cs</DependentUpon>
@@ -166,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORM\UCinsertQuestion.resx">
       <DependentUpon>UCinsertQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\UCoutcome.resx">
+      <DependentUpon>UCoutcome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -228,6 +245,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trash_can_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag_2_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

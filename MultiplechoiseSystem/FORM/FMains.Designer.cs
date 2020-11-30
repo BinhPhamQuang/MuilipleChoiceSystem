@@ -119,6 +119,7 @@
             this.btnCourse.Size = new System.Drawing.Size(331, 144);
             this.btnCourse.TabIndex = 2;
             this.btnCourse.Text = "My Courses";
+            this.btnCourse.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCourse.UseVisualStyleBackColor = false;
             this.btnCourse.Click += new System.EventHandler(this.btnCourse_Click);
             // 

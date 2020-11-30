@@ -66,9 +66,11 @@ namespace MultiplechoiseSystem.FORM
             {
                 lbType.Text = "Manager";
                 button1.TextAlign = ContentAlignment.MiddleRight;
-                button1.Text = "Course Outcome";
+                button1.Text = "Outcomes";
                 button1.Visible = true;
                 btnCreateQuestion.Visible = false;
+                btnCreateQuestion.Text = "Approve tests";
+                btnCreateQuestion.Visible = true;
             }
             lbDepartment.Text = UserDTO.Instance.DepartmentName;
 
@@ -149,9 +151,11 @@ namespace MultiplechoiseSystem.FORM
             }
             else
             {
-                if (UserDTO.Instance.UserType == UserDTO.Instance.Manager)
+                if (UserDTO.Instance.UserType ==UserDTO.Instance.Manager)
                 {
-
+                    UCoutcome f = new UCoutcome();
+                    panel_main.Controls.Add(f);
+                    f.BringToFront();
                 }
             }
         }
@@ -184,12 +188,24 @@ namespace MultiplechoiseSystem.FORM
 
         private void btnCreateQuestion_Click(object sender, EventArgs e)
         {
-            btnCreateQuestion.BackColor = Color.FromArgb(0, 0, 64);
+            btnCourse.BackColor = Color.FromArgb(16,54,100);
             button1.BackColor = Color.FromArgb(16, 54, 100);
-            btnCourse.BackColor = Color.FromArgb(16, 54, 100);
-            UCinsertQuestion uCinsertQuestion = new UCinsertQuestion();
-            panel_main.Controls.Add(uCinsertQuestion);
-            uCinsertQuestion.BringToFront();
+            btnCreateQuestion.BackColor = Color.FromArgb(0, 0, 64);
+            if (UserDTO.Instance.UserType == UserDTO.Instance.Manager)
+            {
+                FConfirmTest f = new FConfirmTest();
+                panel_main.Controls.Add(f);
+                f.BringToFront();
+            }
+            else
+            {
+                btnCreateQuestion.BackColor = Color.FromArgb(0, 0, 64);
+                button1.BackColor = Color.FromArgb(16, 54, 100);
+                btnCourse.BackColor = Color.FromArgb(16, 54, 100);
+                UCinsertQuestion uCinsertQuestion = new UCinsertQuestion();
+                panel_main.Controls.Add(uCinsertQuestion);
+                uCinsertQuestion.BringToFront();
+            }
         }
     }
 }

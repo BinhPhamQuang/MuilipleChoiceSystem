@@ -12,6 +12,8 @@ namespace MultiplechoiseSystem.DTO
         public string key;
         public string text;
         public int inCorrect = 0;
+        public string KeyAnswerSheet;
+        public string questionID;
     }
     class QuestionDTO
     {

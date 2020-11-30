@@ -15,5 +15,6 @@ namespace MultiplechoiseSystem.DTO
         public int AcademyYear;
         public string courseName;
         public string teacherCreate;
+        public int ExamTime;
     }
 }
