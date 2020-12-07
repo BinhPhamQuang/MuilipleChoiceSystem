@@ -21,3 +21,13 @@ C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\Multiplec
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.FConfirmTest.resources
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.UCoutcome.resources
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.SelectedAnswer.resources
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\bin\Debug\LiveCharts.dll
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\bin\Debug\LiveCharts.pdb
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\bin\Debug\LiveCharts.xml
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.csproj.CopyComplete

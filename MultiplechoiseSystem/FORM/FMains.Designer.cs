@@ -31,34 +31,34 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMains));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
             this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnCourse = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnCreateQuestion = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnEditProfile = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbDepartment = new System.Windows.Forms.Label();
             this.lbType = new System.Windows.Forms.Label();
             this.lbname = new System.Windows.Forms.Label();
-            this.ptbAvartar = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbTime = new System.Windows.Forms.Label();
             this.lbdate = new System.Windows.Forms.Label();
-            this.buttonMinimize = new System.Windows.Forms.PictureBox();
-            this.buttonExit = new System.Windows.Forms.PictureBox();
             this.panel_main = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.buttonMinimize = new System.Windows.Forms.PictureBox();
+            this.buttonExit = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnCourse = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCreateQuestion = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnEditProfile = new System.Windows.Forms.Button();
+            this.ptbAvartar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.flpMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAvartar)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvartar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,24 +75,6 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // btnExit
-            // 
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 952);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(322, 144);
-            this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "Log out";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // flpMenu
             // 
             this.flpMenu.Controls.Add(this.btnCourse);
@@ -102,74 +84,6 @@
             this.flpMenu.Name = "flpMenu";
             this.flpMenu.Size = new System.Drawing.Size(329, 501);
             this.flpMenu.TabIndex = 6;
-            // 
-            // btnCourse
-            // 
-            this.btnCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnCourse.FlatAppearance.BorderSize = 0;
-            this.btnCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCourse.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCourse.ForeColor = System.Drawing.Color.White;
-            this.btnCourse.Image = global::MultiplechoiseSystem.Properties.Resources.course;
-            this.btnCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCourse.Location = new System.Drawing.Point(4, 4);
-            this.btnCourse.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCourse.Name = "btnCourse";
-            this.btnCourse.Size = new System.Drawing.Size(331, 144);
-            this.btnCourse.TabIndex = 2;
-            this.btnCourse.Text = "My Courses";
-            this.btnCourse.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCourse.UseVisualStyleBackColor = false;
-            this.btnCourse.Click += new System.EventHandler(this.btnCourse_Click);
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::MultiplechoiseSystem.Properties.Resources.enrollR;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(4, 156);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(321, 144);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Enroll";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnCreateQuestion
-            // 
-            this.btnCreateQuestion.FlatAppearance.BorderSize = 0;
-            this.btnCreateQuestion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnCreateQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateQuestion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateQuestion.ForeColor = System.Drawing.Color.White;
-            this.btnCreateQuestion.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateQuestion.Image")));
-            this.btnCreateQuestion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreateQuestion.Location = new System.Drawing.Point(4, 308);
-            this.btnCreateQuestion.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCreateQuestion.Name = "btnCreateQuestion";
-            this.btnCreateQuestion.Size = new System.Drawing.Size(321, 144);
-            this.btnCreateQuestion.TabIndex = 4;
-            this.btnCreateQuestion.Text = "Create question";
-            this.btnCreateQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreateQuestion.UseVisualStyleBackColor = true;
-            this.btnCreateQuestion.Visible = false;
-            this.btnCreateQuestion.Click += new System.EventHandler(this.btnCreateQuestion_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MultiplechoiseSystem.Properties.Resources.hcmut;
-            this.pictureBox1.Location = new System.Drawing.Point(97, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(142, 120);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // panel3
             // 
@@ -184,18 +98,6 @@
             this.panel3.Size = new System.Drawing.Size(322, 299);
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // btnEditProfile
-            // 
-            this.btnEditProfile.FlatAppearance.BorderSize = 0;
-            this.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnEditProfile.Image")));
-            this.btnEditProfile.Location = new System.Drawing.Point(288, 87);
-            this.btnEditProfile.Name = "btnEditProfile";
-            this.btnEditProfile.Size = new System.Drawing.Size(37, 41);
-            this.btnEditProfile.TabIndex = 5;
-            this.btnEditProfile.UseVisualStyleBackColor = true;
-            this.btnEditProfile.Click += new System.EventHandler(this.btnEditProfile_Click);
             // 
             // panel4
             // 
@@ -238,16 +140,6 @@
             this.lbname.Text = "Pham Quang Binh";
             this.lbname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ptbAvartar
-            // 
-            this.ptbAvartar.Image = global::MultiplechoiseSystem.Properties.Resources.user1;
-            this.ptbAvartar.Location = new System.Drawing.Point(0, -1);
-            this.ptbAvartar.Name = "ptbAvartar";
-            this.ptbAvartar.Size = new System.Drawing.Size(325, 129);
-            this.ptbAvartar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ptbAvartar.TabIndex = 0;
-            this.ptbAvartar.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(54)))), ((int)(((byte)(100)))));
@@ -284,6 +176,20 @@
             this.lbdate.TabIndex = 29;
             this.lbdate.Text = "Date";
             // 
+            // panel_main
+            // 
+            this.panel_main.AutoSize = true;
+            this.panel_main.Location = new System.Drawing.Point(343, 81);
+            this.panel_main.Name = "panel_main";
+            this.panel_main.Size = new System.Drawing.Size(1587, 1003);
+            this.panel_main.TabIndex = 3;
+            this.panel_main.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_main_Paint);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // buttonMinimize
             // 
             this.buttonMinimize.Dock = System.Windows.Forms.DockStyle.Right;
@@ -308,19 +214,114 @@
             this.buttonExit.TabStop = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // panel_main
+            // btnExit
             // 
-            this.panel_main.AutoSize = true;
-            this.panel_main.Location = new System.Drawing.Point(343, 81);
-            this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(1587, 1003);
-            this.panel_main.TabIndex = 3;
-            this.panel_main.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_main_Paint);
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(0, 952);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(322, 144);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "Log out";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // timer1
+            // btnCourse
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.btnCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnCourse.FlatAppearance.BorderSize = 0;
+            this.btnCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCourse.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCourse.ForeColor = System.Drawing.Color.White;
+            this.btnCourse.Image = global::MultiplechoiseSystem.Properties.Resources.course;
+            this.btnCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCourse.Location = new System.Drawing.Point(4, 4);
+            this.btnCourse.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCourse.Name = "btnCourse";
+            this.btnCourse.Size = new System.Drawing.Size(331, 144);
+            this.btnCourse.TabIndex = 2;
+            this.btnCourse.Text = "My Courses";
+            this.btnCourse.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCourse.UseVisualStyleBackColor = false;
+            this.btnCourse.Click += new System.EventHandler(this.btnCourse_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::MultiplechoiseSystem.Properties.Resources.enrollR;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(4, 156);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(321, 144);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Enroll";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnCreateQuestion
+            // 
+            this.btnCreateQuestion.FlatAppearance.BorderSize = 0;
+            this.btnCreateQuestion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnCreateQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateQuestion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateQuestion.ForeColor = System.Drawing.Color.White;
+            this.btnCreateQuestion.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateQuestion.Image")));
+            this.btnCreateQuestion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreateQuestion.Location = new System.Drawing.Point(4, 308);
+            this.btnCreateQuestion.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreateQuestion.Name = "btnCreateQuestion";
+            this.btnCreateQuestion.Size = new System.Drawing.Size(321, 144);
+            this.btnCreateQuestion.TabIndex = 4;
+            this.btnCreateQuestion.Text = "Create question";
+            this.btnCreateQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCreateQuestion.UseVisualStyleBackColor = true;
+            this.btnCreateQuestion.Visible = false;
+            this.btnCreateQuestion.Click += new System.EventHandler(this.btnCreateQuestion_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MultiplechoiseSystem.Properties.Resources.hcmut;
+            this.pictureBox1.Location = new System.Drawing.Point(97, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(142, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnEditProfile
+            // 
+            this.btnEditProfile.FlatAppearance.BorderSize = 0;
+            this.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnEditProfile.Image")));
+            this.btnEditProfile.Location = new System.Drawing.Point(288, 87);
+            this.btnEditProfile.Name = "btnEditProfile";
+            this.btnEditProfile.Size = new System.Drawing.Size(37, 41);
+            this.btnEditProfile.TabIndex = 5;
+            this.btnEditProfile.UseVisualStyleBackColor = true;
+            this.btnEditProfile.Click += new System.EventHandler(this.btnEditProfile_Click);
+            // 
+            // ptbAvartar
+            // 
+            this.ptbAvartar.Image = ((System.Drawing.Image)(resources.GetObject("ptbAvartar.Image")));
+            this.ptbAvartar.Location = new System.Drawing.Point(108, 20);
+            this.ptbAvartar.Name = "ptbAvartar";
+            this.ptbAvartar.Size = new System.Drawing.Size(103, 99);
+            this.ptbAvartar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbAvartar.TabIndex = 0;
+            this.ptbAvartar.TabStop = false;
             // 
             // FMains
             // 
@@ -338,13 +339,13 @@
             this.Load += new System.EventHandler(this.FMains_Load);
             this.panel1.ResumeLayout(false);
             this.flpMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAvartar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvartar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

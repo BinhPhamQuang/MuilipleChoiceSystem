@@ -760,7 +760,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCEditInfo";
-            this.Size = new System.Drawing.Size(1394, 776);
+            this.Size = new System.Drawing.Size(1401, 871);
             this.Load += new System.EventHandler(this.UCEditInfo_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

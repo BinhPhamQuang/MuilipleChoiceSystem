@@ -67,7 +67,7 @@ namespace MultiplechoiseSystem.FORM
             txtSearchResult.Clear();
         }
         private int COUNT_NO =1;
-        private Panel createFrameResult(string id,string name,double scores, string date)
+        private Panel createFrameResult(SheetDTO sheet)
         {
             Panel p = new Panel();
             p.Size = new Size(1365, 70);
@@ -83,19 +83,19 @@ namespace MultiplechoiseSystem.FORM
             NO.Text = COUNT_NO.ToString();
             NO.Location = new Point(5, 24);
 
-            Fullname.Text = name;
+            Fullname.Text = sheet.Fullname;
             Fullname.AutoSize = false;
             Fullname.Location = new Point(58, 24);
             Fullname.Size = new Size(390, 30);
             Fullname.TextAlign = ContentAlignment.MiddleCenter;
 
-            dateDo.Text =date;
+            dateDo.Text =sheet.DateTake.ToString("dd/MM/yyyy h:mm tt");
             dateDo.Location = new Point(510, 24);
             dateDo.AutoSize = false;
             dateDo.TextAlign = ContentAlignment.MiddleLeft;
             dateDo.Size = new Size(404, 30);
 
-            scoreTest.Text = scores.ToString();
+            scoreTest.Text = sheet.Marks;
             scoreTest.Location = new Point(956, 24);
             scoreTest.AutoSize = false;
             scoreTest.Size = new Size(121, 30);
@@ -107,11 +107,13 @@ namespace MultiplechoiseSystem.FORM
             detail.FlatStyle = FlatStyle.Flat;
             detail.FlatAppearance.BorderSize = 0;
             detail.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            
         
  
     
  
             detail.Click += Btndetail_Click;
+            detail.Tag = sheet;
             
 
             COUNT_NO += 1;
@@ -156,18 +158,36 @@ namespace MultiplechoiseSystem.FORM
         {
             DisplayManagerFunction();
             Displaylabel();
-            if( UserDTO.Instance.UserType==UserDTO.Instance.Student)
+             
                 CheckStatusReview();
+             
+            
+         
              
         }
         private void CheckStatusReview()
         {
-            string query = $"select * from SHEET_ANSWER where examID='Final' and CourseID='CO2003' and userID='1'";
+            string query = $"select * from SHEET_ANSWER where examID='{UserDTO.Instance.examSelected.examID}' and CourseID='{UserDTO.Instance.examSelected.courseID}' and userID='{UserDTO.Instance.userID}'";
             DataTable a=DataProvider.Instance.ExecuteQuery(query);
-            if (a.Rows.Count == 0)
+            if (a.Rows.Count == 0 && UserDTO.Instance.UserType == UserDTO.Instance.Student)
                 btnDo.Visible = true;
+            else
+            {
+                if (UserDTO.Instance.UserType == UserDTO.Instance.Student)
+                    foreach( SheetDTO i in SheetAnswerDAO.Instance.getSheetAnswerByIduser(UserDTO.Instance.examSelected.examID, UserDTO.Instance.examSelected.courseID, UserDTO.Instance.userID))
+                    {
+                        flp_result.Controls.Add(createFrameResult(i));
+                    }
+                else
+                {
+                    foreach (SheetDTO i in SheetAnswerDAO.Instance.getAllSheetAnswer(UserDTO.Instance.examSelected.examID, UserDTO.Instance.examSelected.courseID))
+                    {
+                        flp_result.Controls.Add(createFrameResult(i));
+                    }
+                }
+            }
         }
-
+     
 
         private void flp_result_Paint(object sender, PaintEventArgs e)
         {
@@ -192,12 +212,19 @@ namespace MultiplechoiseSystem.FORM
         private void btnDo_Click(object sender, EventArgs e)
         {
             Random random = new Random();
-        
-            List<TestDTO> lst = TestDAO.Instance.getListTestByExamID_courseID(UserDTO.Instance.examSelected.examID, UserDTO.Instance.examSelected.courseID);
+            try
+            {
+                List<TestDTO> lst = TestDAO.Instance.getListTestByExamID_courseID(UserDTO.Instance.examSelected.examID, UserDTO.Instance.examSelected.courseID);
 
-            string codeexam = lst[random.Next(0, lst.Count)].code;
-            FTest f = new FTest(codeexam,UserDTO.Instance.examSelected.courseID, UserDTO.Instance.examSelected.examID,false);
-           f.ShowDialog();
+                string codeexam = lst[random.Next(0, lst.Count)].code;
+                FTest f = new FTest(codeexam, UserDTO.Instance.examSelected.courseID, UserDTO.Instance.examSelected.examID, false);
+                f.ShowDialog();
+                CheckStatusReview();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

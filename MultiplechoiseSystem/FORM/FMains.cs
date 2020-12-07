@@ -51,7 +51,7 @@ namespace MultiplechoiseSystem.FORM
             {
                 lbType.Text = "Student";
                 button1.Visible = true;
-                button1.TextAlign = ContentAlignment.MiddleCenter;
+                button1.TextAlign = ContentAlignment.MiddleRight;
                 button1.Text = "Enroll";
                 btnCreateQuestion.Visible = false;
             }
@@ -78,6 +78,14 @@ namespace MultiplechoiseSystem.FORM
         private void FMains_Load(object sender, EventArgs e)
         {
             DisplayInfo();
+            if (UserDTO.Instance.sex=="M")
+            {
+                ptbAvartar.Image = MultiplechoiseSystem.Properties.Resources.male;
+            }
+            else
+            {
+                ptbAvartar.Image = MultiplechoiseSystem.Properties.Resources.female;
+            }
              
         }
 

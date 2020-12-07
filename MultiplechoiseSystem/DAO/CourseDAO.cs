@@ -17,7 +17,7 @@ namespace MultiplechoiseSystem.DAO
     {
         private static CourseDAO instance;
         public static CourseDAO Instance
-        {
+        { 
             get { if (instance == null) instance = new CourseDAO(); return CourseDAO.instance; }
             private set { CourseDAO.instance = value; }
         }

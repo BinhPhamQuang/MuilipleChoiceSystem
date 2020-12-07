@@ -34,23 +34,23 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panelOCdetail = new System.Windows.Forms.Panel();
+            this.flpListOC = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel_addOC = new System.Windows.Forms.Panel();
             this.btnAddOC = new System.Windows.Forms.Button();
             this.txtDescriptionOC = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCodeCO = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.flpListOC = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.flpOutcomes.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelOCdetail.SuspendLayout();
-            this.panel_addOC.SuspendLayout();
             this.flpListOC.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel_addOC.SuspendLayout();
             this.SuspendLayout();
             // 
             // flpOutcomes
@@ -100,9 +100,62 @@
             this.panelOCdetail.Controls.Add(this.panel_addOC);
             this.panelOCdetail.Location = new System.Drawing.Point(6, 498);
             this.panelOCdetail.Name = "panelOCdetail";
-            this.panelOCdetail.Size = new System.Drawing.Size(1383, 275);
+            this.panelOCdetail.Size = new System.Drawing.Size(1383, 370);
             this.panelOCdetail.TabIndex = 2;
             this.panelOCdetail.Visible = false;
+            // 
+            // flpListOC
+            // 
+            this.flpListOC.AutoScroll = true;
+            this.flpListOC.Controls.Add(this.panel2);
+            this.flpListOC.Location = new System.Drawing.Point(3, 3);
+            this.flpListOC.Name = "flpListOC";
+            this.flpListOC.Size = new System.Drawing.Size(1377, 311);
+            this.flpListOC.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightCyan;
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1346, 38);
+            this.panel2.TabIndex = 1;
+            this.panel2.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = global::MultiplechoiseSystem.Properties.Resources.trash_can_30px;
+            this.button3.Location = new System.Drawing.Point(46, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(37, 35);
+            this.button3.TabIndex = 5;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::MultiplechoiseSystem.Properties.Resources.editQuestion;
+            this.button2.Location = new System.Drawing.Point(3, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(37, 35);
+            this.button2.TabIndex = 4;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(89, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(1254, 30);
+            this.label6.TabIndex = 1;
+            this.label6.Text = resources.GetString("label6.Text");
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel_addOC
             // 
@@ -112,7 +165,7 @@
             this.panel_addOC.Controls.Add(this.label3);
             this.panel_addOC.Controls.Add(this.txtCodeCO);
             this.panel_addOC.Controls.Add(this.label2);
-            this.panel_addOC.Location = new System.Drawing.Point(6, 225);
+            this.panel_addOC.Location = new System.Drawing.Point(6, 320);
             this.panel_addOC.Name = "panel_addOC";
             this.panel_addOC.Size = new System.Drawing.Size(1349, 47);
             this.panel_addOC.TabIndex = 3;
@@ -166,59 +219,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Code";
             // 
-            // flpListOC
-            // 
-            this.flpListOC.AutoScroll = true;
-            this.flpListOC.Controls.Add(this.panel2);
-            this.flpListOC.Location = new System.Drawing.Point(3, 3);
-            this.flpListOC.Name = "flpListOC";
-            this.flpListOC.Size = new System.Drawing.Size(1377, 216);
-            this.flpListOC.TabIndex = 4;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightCyan;
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1346, 38);
-            this.panel2.TabIndex = 1;
-            this.panel2.Visible = false;
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::MultiplechoiseSystem.Properties.Resources.trash_can_30px;
-            this.button3.Location = new System.Drawing.Point(46, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(37, 35);
-            this.button3.TabIndex = 5;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::MultiplechoiseSystem.Properties.Resources.editQuestion;
-            this.button2.Location = new System.Drawing.Point(3, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(37, 35);
-            this.button2.TabIndex = 4;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(89, 3);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1254, 30);
-            this.label6.TabIndex = 1;
-            this.label6.Text = resources.GetString("label6.Text");
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // UCoutcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
@@ -226,17 +226,17 @@
             this.Controls.Add(this.panelOCdetail);
             this.Controls.Add(this.flpOutcomes);
             this.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCoutcome";
-            this.Size = new System.Drawing.Size(1394, 776);
+            this.Size = new System.Drawing.Size(1401, 871);
             this.Load += new System.EventHandler(this.UCoutcome_Load);
             this.flpOutcomes.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panelOCdetail.ResumeLayout(false);
-            this.panel_addOC.ResumeLayout(false);
-            this.panel_addOC.PerformLayout();
             this.flpListOC.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel_addOC.ResumeLayout(false);
+            this.panel_addOC.PerformLayout();
             this.ResumeLayout(false);
 
         }

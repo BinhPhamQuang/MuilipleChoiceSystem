@@ -92,7 +92,7 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(628, 22);
+            this.btnClose.Location = new System.Drawing.Point(1337, 28);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(55, 49);
             this.btnClose.TabIndex = 3;
@@ -186,7 +186,7 @@
             // flp_result
             // 
             this.flp_result.AutoScroll = true;
-            this.flp_result.BackColor = System.Drawing.Color.Gainsboro;
+            this.flp_result.BackColor = System.Drawing.SystemColors.Control;
             this.flp_result.Controls.Add(this.pn_result_st);
             this.flp_result.Location = new System.Drawing.Point(0, 300);
             this.flp_result.Name = "flp_result";
@@ -267,9 +267,9 @@
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.lbStatus);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(0, 256);
+            this.panel1.Location = new System.Drawing.Point(0, 250);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1391, 47);
+            this.panel1.Size = new System.Drawing.Size(1370, 47);
             this.panel1.TabIndex = 1;
             // 
             // label11

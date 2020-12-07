@@ -10,7 +10,7 @@ namespace MultiplechoiseSystem.DAO
 {
     public class DataProvider
     {
-        private static DataProvider instance; // Ctrl + R + E
+        private static DataProvider instance; 
 
         public static DataProvider Instance
         {
@@ -25,13 +25,10 @@ namespace MultiplechoiseSystem.DAO
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
-
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
-
                 SqlCommand command = new SqlCommand(query, connection);
-
                 if (parameter != null)
                 {
                     string[] listPara = query.Split(' ');
@@ -45,27 +42,19 @@ namespace MultiplechoiseSystem.DAO
                         }
                     }
                 }
-
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
-               
                 adapter.Fill(data);
-
                 connection.Close();
             }
-
             return data;
         }
-
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
-
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
-
                 SqlCommand command = new SqlCommand(query, connection);
-
                 if (parameter != null)
                 {
                     string[] listPara = query.Split(' ');
@@ -79,12 +68,9 @@ namespace MultiplechoiseSystem.DAO
                         }
                     }
                 }
-
                 data = command.ExecuteNonQuery();
-
                 connection.Close();
             }
-
             return data;
         }
 

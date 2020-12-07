@@ -121,12 +121,8 @@ namespace MultiplechoiseSystem.FORM
                 flp_question.Controls.Add(layoutQuestion(lst[randomQuestion[i]], stt, 0));
                 stt++;
             }
-            /*
-            foreach( QuestionDTO i in lst)
-            {
-                flp_question.Controls.Add(layoutQuestion(i,stt,0));
-                stt++;
-            }*/
+            
+        
         }
         private void aTimer_Tick(object sender, EventArgs e)
 
@@ -147,14 +143,14 @@ namespace MultiplechoiseSystem.FORM
         {
             Panel panel = new Panel();
             panel.AutoSize = true;
-            panel.BackColor = Color.LightCyan;
+            panel.BackColor = Color.Gainsboro;
             panel.Location = new System.Drawing.Point(3, 3);
             panel.Size = new System.Drawing.Size(1618, 334);
 
             RichTextBox richQuestion = new RichTextBox();
             richQuestion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             richQuestion.Cursor = System.Windows.Forms.Cursors.Arrow;
-            richQuestion.BackColor = Color.SkyBlue;
+            richQuestion.BackColor = Color.LightGray;
             richQuestion.EnableAutoDragDrop = true;
             richQuestion.Location = new System.Drawing.Point(150, 9);
             richQuestion.ReadOnly = true;
@@ -238,7 +234,7 @@ namespace MultiplechoiseSystem.FORM
             }
             panel.Controls.Add(richQuestion);
             panel.Controls.Add(lbQuestion);
-            panel.Controls.Add(btnComplete);
+            //panel.Controls.Add(btnComplete);
             return panel;
         }
 
@@ -268,9 +264,9 @@ namespace MultiplechoiseSystem.FORM
                 check.Text = i.text;
                 check.CheckedChanged += cbBoxAnswer_CheckChanged;
                 check.Tag = i;
-           
+                count++;
                 panel.Controls.Add(check);
-                if(count==5)
+                if(lstAnswer.Count==5)
                 {
                     panel.Size = new Size(1465, 198);
                 }
@@ -345,8 +341,9 @@ namespace MultiplechoiseSystem.FORM
                 check.Text = i.text;
                 check.CheckedChanged += RadioAnswer_CheckChanged;
                 check.Tag = i;
+                count++;
                 panel.Controls.Add(check);
-                if (count == 5)
+                if (lstAnswer.Count == 5)
                 {
                     panel.Size = new Size(1465, 198);
                 }
@@ -362,14 +359,52 @@ namespace MultiplechoiseSystem.FORM
 
         private void RadioAnswer_CheckChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Answer answer = (sender as RadioButton).Tag as Answer;
+            if (SearchQuestionID(answer.questionID) == true)
+            {
+                UpdateAnswer(answer.questionID, answer);
+
+            }
+            else
+            {
+                SelectedAnswer i = new SelectedAnswer();
+                i.idquestion = answer.questionID;
+                i.seletected.Add(answer);
+                lstSeleteced.Add(i);
+
+            }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
 
-
+            if (UserDTO.Instance.UserType != UserDTO.Instance.Student)
+            {
+                this.Close();
+                return;
+            }
+            int wrong = 0;
+            foreach (SelectedAnswer i in lstSeleteced)
+            {
+                foreach (Answer j in i.seletected)
+                {
+                    if (j.inCorrect==0)
+                    {
+                        wrong += 1;
+                        break;
+                    }
+                }
+            }
             Alert();
+          
+            double marks = 10-(10.0*wrong)/lstSeleteced.Count;
+            
+            string query = $"insert into SHEET_ANSWER values ('{1}','{UserDTO.Instance.userID}','{codeExam}','{examID}','{courseID}',GETDATE(),{marks},'{marks.ToString("0.00")}' )";
+            DataProvider.Instance.ExecuteQuery(query);
+
+
+
+          
             this.Close();
             
 

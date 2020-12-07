@@ -141,7 +141,7 @@ namespace MultiplechoiseSystem.FORM
         }
         private void LoadExamName()
         {
-            string query = $"Select * from Exam where CourseID='{idCourse}' AND DATEDIFF(day, TestDay,GETDATE())<0";
+            string query = $"Select * from Exam where CourseID='{idCourse}' --AND DATEDIFF(day, TestDay,GETDATE())<0";
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             List<string> examName = new List<string>();
             foreach(DataRow i in result.Rows)
