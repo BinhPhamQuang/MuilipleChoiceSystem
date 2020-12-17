@@ -64,12 +64,12 @@ namespace MultiplechoiseSystem.FORM
             lbdateConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
             Button btnComfirm = new Button();
-            btnComfirm.BackColor = System.Drawing.Color.Aquamarine;
+            btnComfirm.BackColor = System.Drawing.Color.SkyBlue;
             btnComfirm.FlatAppearance.BorderSize = 0;
             btnComfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnComfirm.Location = new System.Drawing.Point(1058, -3);
             btnComfirm.Size = new System.Drawing.Size(291, 63);
-            btnComfirm.Text = "Confirm";
+            btnComfirm.Text = "Approve";
             btnComfirm.UseVisualStyleBackColor = false;
             btnComfirm.Click += btnComfirm_Click;
             btnComfirm.Tag = test;

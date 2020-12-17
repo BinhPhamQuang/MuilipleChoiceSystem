@@ -156,6 +156,7 @@ namespace MultiplechoiseSystem.FORM
             if (UserDTO.Instance.UserType == UserDTO.Instance.Student)
             {
                 ucenroll.BringToFront();
+        
             }
             else
             {

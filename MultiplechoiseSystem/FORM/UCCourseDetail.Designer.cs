@@ -48,10 +48,10 @@
             this.btnReview = new System.Windows.Forms.Button();
             this.lbScores = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDo = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.lbStatus = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnAnalysis = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -62,9 +62,12 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.btnReset = new System.Windows.Forms.Button();
             this.txtSearchResult = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pn_manage = new System.Windows.Forms.Panel();
-            this.btnDo = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnAnalysis = new System.Windows.Forms.Button();
+            this.panel_analys = new System.Windows.Forms.Panel();
+            this.pieChart1 = new LiveCharts.WinForms.PieChart();
+            this.btnCLoseAnalys = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -74,6 +77,7 @@
             this.panel8.SuspendLayout();
             this.pn_search.SuspendLayout();
             this.pn_manage.SuspendLayout();
+            this.panel_analys.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -264,6 +268,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.Controls.Add(this.btnDo);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.lbStatus);
             this.panel1.Controls.Add(this.label4);
@@ -271,6 +276,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1370, 47);
             this.panel1.TabIndex = 1;
+            // 
+            // btnDo
+            // 
+            this.btnDo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDo.Location = new System.Drawing.Point(502, 0);
+            this.btnDo.Name = "btnDo";
+            this.btnDo.Size = new System.Drawing.Size(230, 45);
+            this.btnDo.TabIndex = 13;
+            this.btnDo.Text = "Take test !";
+            this.btnDo.UseVisualStyleBackColor = false;
+            this.btnDo.Visible = false;
+            this.btnDo.Click += new System.EventHandler(this.btnDo_Click);
             // 
             // label11
             // 
@@ -301,20 +319,6 @@
             this.label4.Size = new System.Drawing.Size(117, 30);
             this.label4.TabIndex = 0;
             this.label4.Text = "Marks/10";
-            // 
-            // btnAnalysis
-            // 
-            this.btnAnalysis.FlatAppearance.BorderSize = 0;
-            this.btnAnalysis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnalysis.Image = ((System.Drawing.Image)(resources.GetObject("btnAnalysis.Image")));
-            this.btnAnalysis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnalysis.Location = new System.Drawing.Point(18, 71);
-            this.btnAnalysis.Name = "btnAnalysis";
-            this.btnAnalysis.Size = new System.Drawing.Size(156, 67);
-            this.btnAnalysis.TabIndex = 10;
-            this.btnAnalysis.Text = "Analysis";
-            this.btnAnalysis.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAnalysis.UseVisualStyleBackColor = true;
             // 
             // panel8
             // 
@@ -416,6 +420,15 @@
             this.txtSearchResult.Size = new System.Drawing.Size(358, 29);
             this.txtSearchResult.TabIndex = 7;
             // 
+            // pn_manage
+            // 
+            this.pn_manage.Controls.Add(this.button1);
+            this.pn_manage.Controls.Add(this.btnAnalysis);
+            this.pn_manage.Location = new System.Drawing.Point(1217, 112);
+            this.pn_manage.Name = "pn_manage";
+            this.pn_manage.Size = new System.Drawing.Size(177, 138);
+            this.pn_manage.TabIndex = 1;
+            // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
@@ -430,33 +443,56 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // pn_manage
+            // btnAnalysis
             // 
-            this.pn_manage.Controls.Add(this.button1);
-            this.pn_manage.Controls.Add(this.btnAnalysis);
-            this.pn_manage.Location = new System.Drawing.Point(1217, 112);
-            this.pn_manage.Name = "pn_manage";
-            this.pn_manage.Size = new System.Drawing.Size(177, 138);
-            this.pn_manage.TabIndex = 1;
+            this.btnAnalysis.FlatAppearance.BorderSize = 0;
+            this.btnAnalysis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnalysis.Image = ((System.Drawing.Image)(resources.GetObject("btnAnalysis.Image")));
+            this.btnAnalysis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnalysis.Location = new System.Drawing.Point(18, 71);
+            this.btnAnalysis.Name = "btnAnalysis";
+            this.btnAnalysis.Size = new System.Drawing.Size(156, 67);
+            this.btnAnalysis.TabIndex = 10;
+            this.btnAnalysis.Text = "Analysis";
+            this.btnAnalysis.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAnalysis.UseVisualStyleBackColor = true;
+            this.btnAnalysis.Click += new System.EventHandler(this.btnAnalysis_Click);
             // 
-            // btnDo
+            // panel_analys
             // 
-            this.btnDo.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnDo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDo.Location = new System.Drawing.Point(503, 215);
-            this.btnDo.Name = "btnDo";
-            this.btnDo.Size = new System.Drawing.Size(230, 41);
-            this.btnDo.TabIndex = 13;
-            this.btnDo.Text = "Take test !";
-            this.btnDo.UseVisualStyleBackColor = false;
-            this.btnDo.Visible = false;
-            this.btnDo.Click += new System.EventHandler(this.btnDo_Click);
+            this.panel_analys.Controls.Add(this.pieChart1);
+            this.panel_analys.Controls.Add(this.btnCLoseAnalys);
+            this.panel_analys.Location = new System.Drawing.Point(-9, 89);
+            this.panel_analys.Name = "panel_analys";
+            this.panel_analys.Size = new System.Drawing.Size(1403, 687);
+            this.panel_analys.TabIndex = 14;
+            this.panel_analys.Visible = false;
+            // 
+            // pieChart1
+            // 
+            this.pieChart1.Location = new System.Drawing.Point(31, 53);
+            this.pieChart1.Name = "pieChart1";
+            this.pieChart1.Size = new System.Drawing.Size(771, 556);
+            this.pieChart1.TabIndex = 1;
+            this.pieChart1.Text = "pieChart1";
+            // 
+            // btnCLoseAnalys
+            // 
+            this.btnCLoseAnalys.FlatAppearance.BorderSize = 0;
+            this.btnCLoseAnalys.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCLoseAnalys.Image = ((System.Drawing.Image)(resources.GetObject("btnCLoseAnalys.Image")));
+            this.btnCLoseAnalys.Location = new System.Drawing.Point(1365, 0);
+            this.btnCLoseAnalys.Name = "btnCLoseAnalys";
+            this.btnCLoseAnalys.Size = new System.Drawing.Size(38, 35);
+            this.btnCLoseAnalys.TabIndex = 0;
+            this.btnCLoseAnalys.UseVisualStyleBackColor = true;
+            this.btnCLoseAnalys.Click += new System.EventHandler(this.btnCLoseAnalys_Click);
             // 
             // UCCourseDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnDo);
+            this.Controls.Add(this.panel_analys);
             this.Controls.Add(this.pn_search);
             this.Controls.Add(this.pn_manage);
             this.Controls.Add(this.panel8);
@@ -485,6 +521,7 @@
             this.pn_search.ResumeLayout(false);
             this.pn_search.PerformLayout();
             this.pn_manage.ResumeLayout(false);
+            this.panel_analys.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -527,5 +564,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel pn_manage;
         private System.Windows.Forms.Button btnDo;
+        private System.Windows.Forms.Panel panel_analys;
+        private System.Windows.Forms.Button btnCLoseAnalys;
+        private LiveCharts.WinForms.PieChart pieChart1;
     }
 }

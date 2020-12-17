@@ -30,7 +30,7 @@ namespace MultiplechoiseSystem.FORM
         {
             Panel course = new Panel();
             course.Size = new Size(1351, 69);
-            course.BackColor = Color.Gainsboro;
+            course.BackColor = Color.LightCyan;
             Label name = new Label();
             Label nametech = new Label();
             Label date = new Label();
@@ -66,9 +66,10 @@ namespace MultiplechoiseSystem.FORM
 
             review.Text = "Enroll";
             review.FlatStyle = FlatStyle.Flat;
-            review.BackColor = Color.MediumAquamarine;
-            review.Location = new Point(1173, 8);
-            review.Size = new Size(175, 48);
+            review.BackColor = Color.SkyBlue;
+            review.Location = new Point(1083, 0);
+            review.FlatAppearance.BorderSize = 0;
+            review.Size = new Size(268, 69);
             review.Click += enroll_Click;
             review.Tag = C;
 
@@ -101,6 +102,7 @@ namespace MultiplechoiseSystem.FORM
             flpListCourse.Controls.Clear();
             foreach (CourseDTO i in CourseDAO.Instance.getAllCourse())
             {
+ 
                 flpListCourse.Controls.Add(EnrollCourse(stt,i));
                 stt++;
             }

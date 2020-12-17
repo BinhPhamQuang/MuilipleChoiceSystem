@@ -31,3 +31,4 @@ C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\Multiplec
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.csproj.CopyComplete
+C:\Users\ASUS\Desktop\Database systems\assignment\MultiplechoiseSystem\MultiplechoiseSystem\obj\Debug\MultiplechoiseSystem.FORM.FTest1.resources

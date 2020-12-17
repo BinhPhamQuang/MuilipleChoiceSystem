@@ -120,6 +120,12 @@
     <Compile Include="FORM\FTest.Designer.cs">
       <DependentUpon>FTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORM\FTest1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\FTest1.Designer.cs">
+      <DependentUpon>FTest1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORM\ListCourse.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORM\FTest.resx">
       <DependentUpon>FTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\FTest1.resx">
+      <DependentUpon>FTest1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORM\ListCourse.resx">
       <DependentUpon>ListCourse.cs</DependentUpon>

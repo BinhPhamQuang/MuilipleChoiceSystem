@@ -36,7 +36,7 @@ namespace MultiplechoiseSystem.FORM
         {
             Panel course = new Panel();
             course.Size = new Size(1164, 69);
-            course.BackColor = Color.Gainsboro;
+            course.BackColor = SystemColors.InactiveCaption;
             Label name = new Label();
             Label nametech = new Label();
             Label date = new Label();
@@ -64,9 +64,10 @@ namespace MultiplechoiseSystem.FORM
 
             dotest.Text = "View";
             dotest.FlatStyle = FlatStyle.Flat;
-            dotest.BackColor = SystemColors.MenuHighlight;
-            dotest.Location = new Point(939, 10);
-            dotest.Size = new Size(210, 48);
+            dotest.BackColor = SystemColors.ActiveCaption;
+            dotest.FlatAppearance.BorderSize = 0;
+            dotest.Location = new Point(939, 0);
+            dotest.Size = new Size(225, 69);
             dotest.Click += viewExam_Click;
       
             dotest.Tag = c;
@@ -78,12 +79,13 @@ namespace MultiplechoiseSystem.FORM
             if (c.idheader == UserDTO.Instance.userID)
             {
                 Button btnCreateSetQuestion = new Button();
-                btnCreateSetQuestion.BackColor = System.Drawing.SystemColors.MenuHighlight;
+                btnCreateSetQuestion.BackColor = System.Drawing.SystemColors.ActiveCaption;
+                btnCreateSetQuestion.FlatAppearance.BorderSize = 0;
                 btnCreateSetQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
                 btnCreateSetQuestion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                btnCreateSetQuestion.Location = new System.Drawing.Point(603, 10);
+                btnCreateSetQuestion.Location = new System.Drawing.Point(598, 0);
 
-                btnCreateSetQuestion.Size = new System.Drawing.Size(336, 48);
+                btnCreateSetQuestion.Size = new System.Drawing.Size(336, 69);
                 btnCreateSetQuestion.TabIndex = 4;
                 btnCreateSetQuestion.Text = "Create set of questions";
                 btnCreateSetQuestion.BringToFront();
@@ -97,12 +99,12 @@ namespace MultiplechoiseSystem.FORM
                 if(c.idmanager== UserDTO.Instance.userID)
                 {
                     Button btnCreateSetQuestion = new Button();
-                    btnCreateSetQuestion.BackColor = System.Drawing.SystemColors.MenuHighlight;
+                    btnCreateSetQuestion.BackColor = System.Drawing.SystemColors.ActiveCaption;
                     btnCreateSetQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
                     btnCreateSetQuestion.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    btnCreateSetQuestion.Location = new System.Drawing.Point(603, 10);
-
-                    btnCreateSetQuestion.Size = new System.Drawing.Size(336, 48);
+                    btnCreateSetQuestion.Location = new System.Drawing.Point(598, 0);
+                    btnCreateSetQuestion.FlatAppearance.BorderSize = 0;
+                    btnCreateSetQuestion.Size = new System.Drawing.Size(336, 69);
                     btnCreateSetQuestion.TabIndex = 4;
                     btnCreateSetQuestion.Text = "Create exams";
                     btnCreateSetQuestion.BringToFront();
@@ -134,6 +136,7 @@ namespace MultiplechoiseSystem.FORM
 
         private void viewExam_Click(object sender, EventArgs e)
         {
+      
             flpExam.Controls.Clear();
             CourseDTO course = (sender as Button).Tag as CourseDTO;
             UserDTO.Instance.courseSelected = course;

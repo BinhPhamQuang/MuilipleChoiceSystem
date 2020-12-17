@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MultiplechoiseSystem.DTO;
 using MultiplechoiseSystem.DAO;
+using LiveCharts;
+using LiveCharts.Wpf;
+
 namespace MultiplechoiseSystem.FORM
 {
     public partial class UCCourseDetail : UserControl
@@ -127,7 +130,13 @@ namespace MultiplechoiseSystem.FORM
 
         private void Btndetail_Click(object sender, EventArgs e)
         {
-            
+            SheetDTO sheet = (sender as Button).Tag as SheetDTO;
+            string query = $"select codetest from SHEET_ANSWER where userID='{sheet.userID}' and examID='{sheet.examID}' and courseID='{sheet.courseID}'";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+      
+            string codeexam = result.Rows[0]["codeTest"].ToString();
+            FTest1 f = new FTest1(codeexam, UserDTO.Instance.examSelected.courseID, UserDTO.Instance.examSelected.examID, sheet.userID , true);
+            f.Show();
         }
 
         private void DisplayManagerFunction()
@@ -217,14 +226,38 @@ namespace MultiplechoiseSystem.FORM
                 List<TestDTO> lst = TestDAO.Instance.getListTestByExamID_courseID(UserDTO.Instance.examSelected.examID, UserDTO.Instance.examSelected.courseID);
 
                 string codeexam = lst[random.Next(0, lst.Count)].code;
-                FTest f = new FTest(codeexam, UserDTO.Instance.examSelected.courseID, UserDTO.Instance.examSelected.examID, false);
+                FTest1 f = new FTest1(codeexam, UserDTO.Instance.examSelected.courseID, UserDTO.Instance.examSelected.examID, UserDTO.Instance.userID, false);
+                btnDo.Visible = false;
                 f.ShowDialog();
                 CheckStatusReview();
             }
-            catch
+            catch(Exception a)
             {
+                MessageBox.Show(a.ToString());
+            }
+        }
+        Func<ChartPoint,string> labelPoint= chartpoint => string.Format("{0} ({1:P})", chartpoint.Y , chartpoint.Participation);
+        private void Analysis()
+        {
+            SeriesCollection series = new SeriesCollection();
+            string query = $"select MARKS, COUNT(*) AS C from sheet_answer where courseID='{UserDTO.Instance.examSelected.courseID}' and examID='{UserDTO.Instance.examSelected.examID}' GROUP BY Marks";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow i in result.Rows)
+            {
+                series.Add(new PieSeries() {Title=i["Marks"].ToString().Trim(),Values=new ChartValues<int> { (int)i["c"]},DataLabels=true, LabelPoint=labelPoint });
 
             }
+            pieChart1.Series = series;
+        }
+        private void btnAnalysis_Click(object sender, EventArgs e)
+        {
+            panel_analys.Visible = true;
+            Analysis();
+        }
+
+        private void btnCLoseAnalys_Click(object sender, EventArgs e)
+        {
+            panel_analys.Visible = false;
         }
     }
 }

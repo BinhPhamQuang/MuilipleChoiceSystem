@@ -87,12 +87,13 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(603, 10);
+            this.button1.Location = new System.Drawing.Point(603, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(336, 48);
+            this.button1.Size = new System.Drawing.Size(336, 69);
             this.button1.TabIndex = 4;
             this.button1.Text = "Create set of questions";
             this.button1.UseVisualStyleBackColor = false;
@@ -117,11 +118,12 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(939, 10);
+            this.button4.Location = new System.Drawing.Point(939, 0);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(210, 48);
+            this.button4.Size = new System.Drawing.Size(225, 69);
             this.button4.TabIndex = 0;
             this.button4.Text = "View";
             this.button4.UseVisualStyleBackColor = false;

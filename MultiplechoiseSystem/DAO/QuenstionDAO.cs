@@ -116,6 +116,21 @@ namespace MultiplechoiseSystem.DAO
             return lst;
         }
 
+        public List<Answer> answerSelected (string userID,string examID,string courseID,string questionID)
+        {
+            List<Answer> answers = new List<Answer>();
+            string query = $"select * from answer_order  join ANSWER on ANSWER_ORDER.questionID = ANSWER.questionID and keyAnswer=aID where userID='{userID}' and ANSWER_ORDER.examID='{examID}' and ANSWER_ORDER.courseID='{courseID}' and ANSWER_ORDER.questionID='{questionID}'" ;
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow i in result.Rows)
+            {
+                Answer answer = new Answer();
+                answer.key = i["keyAnswer"].ToString().Trim();
+                answer.inCorrect = (int)i["isCorrect"];
+                answers.Add(answer);
+            }
+
+            return answers;
+        }
 
         public List<QuestionDTO> LoadListQuestionOfTest(string codeExam, string examID, string courseID)
         {

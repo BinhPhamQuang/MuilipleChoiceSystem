@@ -123,11 +123,11 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.button1.BackColor = System.Drawing.Color.SkyBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1164, 10);
+            this.button1.Location = new System.Drawing.Point(1083, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 48);
+            this.button1.Size = new System.Drawing.Size(268, 69);
             this.button1.TabIndex = 0;
             this.button1.Text = "Enroll";
             this.button1.UseVisualStyleBackColor = false;
