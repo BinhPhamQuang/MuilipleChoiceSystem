@@ -209,12 +209,61 @@ namespace MultiplechoiseSystem.FORM
                 lbCorrect.Size = new System.Drawing.Size(118, 30);
                 lbCorrect.ForeColor = System.Drawing.Color.LimeGreen;
                 lbCorrect.Text = "Correct !";
+
                 if (isCorrect == 0)
                 {
                     lbCorrect.ForeColor = System.Drawing.Color.Red;
                     lbCorrect.Text = "Wrong !";
                 }
-                //panel.Controls.Add(btnReport);
+                Panel pnNode = new Panel();
+                pnNode.Location = new System.Drawing.Point(81, 93);
+                pnNode.Size = new System.Drawing.Size(453, 232);
+
+                Button btnNote = new Button();
+                btnNote.FlatAppearance.BorderSize = 0;
+                btnNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                btnNote.Image = global::MultiplechoiseSystem.Properties.Resources.note_50px;
+                btnNote.Location = new System.Drawing.Point(3, 292);
+                btnNote.Click += btnNode_click;
+                btnNote.Tag =  new object[] { pnNode, question.qID };
+                btnNote.Size = new System.Drawing.Size(57, 48);
+
+
+                
+
+                RichTextBox richNote = new RichTextBox();
+                richNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                richNote.Location = new System.Drawing.Point(3, 30);
+                richNote.Size = new System.Drawing.Size(444, 165);
+                richNote.Text = "";
+                pnNode.Controls.Add(richNote);
+
+                Button btnSave = new Button();
+                btnSave.FlatAppearance.BorderSize = 0;
+                btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                btnSave.Image = global::MultiplechoiseSystem.Properties.Resources.save_30px;
+                btnSave.Location = new System.Drawing.Point(414, 199);
+
+                btnSave.Size = new System.Drawing.Size(36, 28);
+                btnSave.UseVisualStyleBackColor = true;
+                btnSave.Click += btnExitNote_Click;
+                btnSave.Tag = pnNode;
+                Button btnExit = new Button();
+                btnExit.FlatAppearance.BorderSize = 0;
+                btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                btnExit.Image = global::MultiplechoiseSystem.Properties.Resources.close_window_30px;
+                btnExit.Location = new System.Drawing.Point(424, 0);
+                btnExit.Click += btnExitNote_Click;
+                btnExit.Tag = pnNode;
+
+                btnExit.Size = new System.Drawing.Size(29, 30);
+
+                pnNode.Visible = false;
+                pnNode.Controls.Add(btnSave);
+                pnNode.Controls.Add(btnExit);
+                    
+                panel.Controls.Add(btnNote);
+                panel.Controls.Add(pnNode);
                 //panel.Controls.Add(lbCodeTest);
             }
             int NumOfAnswer = 1; int NumOfRightAnswer = 0;
@@ -240,6 +289,19 @@ namespace MultiplechoiseSystem.FORM
             panel.Controls.Add(lbQuestion);
             //panel.Controls.Add(btnComplete);
             return panel;
+        }
+
+        private void btnExitNote_Click(object sender, EventArgs e)
+        {
+            Panel panel = (sender as Button).Tag as Panel;
+            panel.Visible = false;
+        }
+
+        private void btnNode_click(object sender, EventArgs e)
+        {
+            object[] obj = (sender as Button).Tag as object[];
+            Panel panel = (Panel)(obj[0]);
+            panel.Visible = true;
         }
 
         private void btnCompleteQuestion_Click(object sender, EventArgs e)
@@ -474,6 +536,11 @@ namespace MultiplechoiseSystem.FORM
         private void btnCLose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void flp_question_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

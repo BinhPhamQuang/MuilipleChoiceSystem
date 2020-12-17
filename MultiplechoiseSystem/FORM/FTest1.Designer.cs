@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FTest1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCLose = new System.Windows.Forms.Button();
-            this.buttonExit = new System.Windows.Forms.PictureBox();
             this.flp_question = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -51,12 +49,20 @@
             this.lb_minutes = new System.Windows.Forms.Label();
             this.lb_second = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnExitOC = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCLose = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonExit)).BeginInit();
             this.flp_question.SuspendLayout();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonExit)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,26 +76,6 @@
             this.panel1.Size = new System.Drawing.Size(1672, 36);
             this.panel1.TabIndex = 0;
             // 
-            // btnCLose
-            // 
-            this.btnCLose.FlatAppearance.BorderSize = 0;
-            this.btnCLose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCLose.Image = ((System.Drawing.Image)(resources.GetObject("btnCLose.Image")));
-            this.btnCLose.Location = new System.Drawing.Point(1636, 0);
-            this.btnCLose.Name = "btnCLose";
-            this.btnCLose.Size = new System.Drawing.Size(32, 35);
-            this.btnCLose.TabIndex = 1;
-            this.btnCLose.UseVisualStyleBackColor = true;
-            this.btnCLose.Click += new System.EventHandler(this.btnCLose_Click);
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.Location = new System.Drawing.Point(0, 0);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(100, 50);
-            this.buttonExit.TabIndex = 0;
-            this.buttonExit.TabStop = false;
-            // 
             // flp_question
             // 
             this.flp_question.AutoScroll = true;
@@ -98,18 +84,21 @@
             this.flp_question.Name = "flp_question";
             this.flp_question.Size = new System.Drawing.Size(1648, 865);
             this.flp_question.TabIndex = 1;
+            this.flp_question.Paint += new System.Windows.Forms.PaintEventHandler(this.flp_question_Paint_1);
             // 
             // panel3
             // 
             this.panel3.AutoSize = true;
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.flowLayoutPanel1);
             this.panel3.Controls.Add(this.richQuestion);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1618, 334);
+            this.panel3.Size = new System.Drawing.Size(1618, 343);
             this.panel3.TabIndex = 0;
             this.panel3.Visible = false;
             // 
@@ -293,6 +282,80 @@
             this.btnSubmit.Visible = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.btnExitOC);
+            this.panel4.Controls.Add(this.richTextBox1);
+            this.panel4.Location = new System.Drawing.Point(81, 93);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(453, 232);
+            this.panel4.TabIndex = 6;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox1.Location = new System.Drawing.Point(3, 30);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(444, 165);
+            this.richTextBox1.TabIndex = 7;
+            this.richTextBox1.Text = "";
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::MultiplechoiseSystem.Properties.Resources.save_30px;
+            this.button2.Location = new System.Drawing.Point(414, 199);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(36, 28);
+            this.button2.TabIndex = 7;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            // 
+            // btnExitOC
+            // 
+            this.btnExitOC.FlatAppearance.BorderSize = 0;
+            this.btnExitOC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExitOC.Image = global::MultiplechoiseSystem.Properties.Resources.close_window_30px;
+            this.btnExitOC.Location = new System.Drawing.Point(424, 0);
+            this.btnExitOC.Name = "btnExitOC";
+            this.btnExitOC.Size = new System.Drawing.Size(29, 30);
+            this.btnExitOC.TabIndex = 16;
+            this.btnExitOC.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::MultiplechoiseSystem.Properties.Resources.note_50px;
+            this.button1.Location = new System.Drawing.Point(3, 292);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(57, 48);
+            this.button1.TabIndex = 5;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            // 
+            // btnCLose
+            // 
+            this.btnCLose.FlatAppearance.BorderSize = 0;
+            this.btnCLose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCLose.Image = ((System.Drawing.Image)(resources.GetObject("btnCLose.Image")));
+            this.btnCLose.Location = new System.Drawing.Point(1636, 0);
+            this.btnCLose.Name = "btnCLose";
+            this.btnCLose.Size = new System.Drawing.Size(32, 35);
+            this.btnCLose.TabIndex = 1;
+            this.btnCLose.UseVisualStyleBackColor = true;
+            this.btnCLose.Click += new System.EventHandler(this.btnCLose_Click);
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Location = new System.Drawing.Point(0, 0);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(100, 50);
+            this.buttonExit.TabIndex = 0;
+            this.buttonExit.TabStop = false;
+            // 
             // FTest1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
@@ -312,7 +375,6 @@
             this.Text = "FTest1";
             this.Load += new System.EventHandler(this.FTest1_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.buttonExit)).EndInit();
             this.flp_question.ResumeLayout(false);
             this.flp_question.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -320,6 +382,8 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.buttonExit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -348,5 +412,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox buttonExit;
         private System.Windows.Forms.Button btnCLose;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button btnExitOC;
+        private System.Windows.Forms.Button button2;
     }
 }

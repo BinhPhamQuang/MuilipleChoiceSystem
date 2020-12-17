@@ -253,6 +253,46 @@ namespace MultiplechoiseSystem.FORM
         {
             panel_analys.Visible = true;
             Analysis();
+            chart1.Series.Clear();
+            chart1.Series.Add("Question");
+            string query = "procRateCorrectAnswer @examID , @courseID";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { UserDTO.Instance.examSelected.examID, UserDTO.Instance.examSelected.courseID });
+            int count = 1;
+            foreach (DataRow i in result.Rows)
+            {
+                double t = double.Parse(i["Rate"].ToString());
+                t = Math.Floor(t * 100) / 100;
+                string question = "Q " + count.ToString();
+                chart1.Series["Question"].Points.AddXY(question ,t);
+                chart1.Series["Question"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+                chart1.Series["Question"].IsValueShownAsLabel = true;
+               
+                flpQuestion.Controls.Add(btnShowQuestion(i["questionID"].ToString().Trim(), "Question " + count.ToString()));
+                count++;
+            }
+        }
+        private Button btnShowQuestion(string questionID, string questionName)
+        {
+            Button button2 = new Button();
+                 button2.BackColor = System.Drawing.Color.SkyBlue;
+           button2.FlatAppearance.BorderSize = 0;
+           button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+          button2.Location = new System.Drawing.Point(3, 3);
+     
+          button2.Size = new System.Drawing.Size(186, 39);
+           button2.TabIndex = 0;
+            button2.Text = questionName;
+            button2.Click += button2_Click;
+            button2.Tag = questionID;
+            return button2;
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string questionID = (sender as Button).Tag as string;
+            FShowQuestion f = new FShowQuestion(questionID);
+            f.ShowDialog();
         }
 
         private void btnCLoseAnalys_Click(object sender, EventArgs e)

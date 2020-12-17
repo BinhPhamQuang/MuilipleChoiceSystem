@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCourseDetail));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.lb_namecourse = new System.Windows.Forms.Label();
@@ -68,6 +71,11 @@
             this.panel_analys = new System.Windows.Forms.Panel();
             this.pieChart1 = new LiveCharts.WinForms.PieChart();
             this.btnCLoseAnalys = new System.Windows.Forms.Button();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.flpQuestion = new System.Windows.Forms.FlowLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -78,6 +86,8 @@
             this.pn_search.SuspendLayout();
             this.pn_manage.SuspendLayout();
             this.panel_analys.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.flpQuestion.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -460,6 +470,8 @@
             // 
             // panel_analys
             // 
+            this.panel_analys.Controls.Add(this.flpQuestion);
+            this.panel_analys.Controls.Add(this.chart1);
             this.panel_analys.Controls.Add(this.pieChart1);
             this.panel_analys.Controls.Add(this.btnCLoseAnalys);
             this.panel_analys.Location = new System.Drawing.Point(-9, 89);
@@ -470,9 +482,9 @@
             // 
             // pieChart1
             // 
-            this.pieChart1.Location = new System.Drawing.Point(31, 53);
+            this.pieChart1.Location = new System.Drawing.Point(22, 58);
             this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(771, 556);
+            this.pieChart1.Size = new System.Drawing.Size(501, 469);
             this.pieChart1.TabIndex = 1;
             this.pieChart1.Text = "pieChart1";
             // 
@@ -487,6 +499,76 @@
             this.btnCLoseAnalys.TabIndex = 0;
             this.btnCLoseAnalys.UseVisualStyleBackColor = true;
             this.btnCLoseAnalys.Click += new System.EventHandler(this.btnCLoseAnalys_Click);
+            // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.SystemColors.Control;
+            this.chart1.BorderlineColor = System.Drawing.SystemColors.Control;
+            this.chart1.BorderSkin.PageColor = System.Drawing.SystemColors.GradientActiveCaption;
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
+            this.chart1.Location = new System.Drawing.Point(529, 77);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Question";
+            this.chart1.Series.Add(series5);
+            this.chart1.Size = new System.Drawing.Size(841, 450);
+            this.chart1.TabIndex = 2;
+            this.chart1.Text = "chart1";
+            // 
+            // flpQuestion
+            // 
+            this.flpQuestion.AutoScroll = true;
+            this.flpQuestion.Controls.Add(this.button2);
+            this.flpQuestion.Controls.Add(this.button3);
+            this.flpQuestion.Controls.Add(this.button4);
+            this.flpQuestion.Location = new System.Drawing.Point(611, 511);
+            this.flpQuestion.Name = "flpQuestion";
+            this.flpQuestion.Size = new System.Drawing.Size(789, 173);
+            this.flpQuestion.TabIndex = 3;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.SkyBlue;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(3, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(186, 39);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Question 1";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.SkyBlue;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(195, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(186, 39);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Question 1";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Visible = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.SkyBlue;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(387, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(186, 39);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Question 1";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Visible = false;
             // 
             // UCCourseDetail
             // 
@@ -522,6 +604,8 @@
             this.pn_search.PerformLayout();
             this.pn_manage.ResumeLayout(false);
             this.panel_analys.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.flpQuestion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -567,5 +651,10 @@
         private System.Windows.Forms.Panel panel_analys;
         private System.Windows.Forms.Button btnCLoseAnalys;
         private LiveCharts.WinForms.PieChart pieChart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.FlowLayoutPanel flpQuestion;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
